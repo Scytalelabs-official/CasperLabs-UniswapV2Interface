@@ -160,16 +160,16 @@ export default function Pool() {
       link: '/add/ETH',
       external: false,
     },
-    {
-      content: (
-        <MenuItem>
-          <Trans>Migrate</Trans>
-          <ChevronsRight size={16} />
-        </MenuItem>
-      ),
-      link: '/migrate/v2',
-      external: false,
-    },
+    // {
+    //   content: (
+    //     <MenuItem>
+    //       <Trans>Migrate</Trans>
+    //       <ChevronsRight size={16} />
+    //     </MenuItem>
+    //   ),
+    //   link: '/migrate/v2',
+    //   external: false,
+    // },
     {
       content: (
         <MenuItem>
@@ -177,7 +177,7 @@ export default function Pool() {
           <Layers size={16} />
         </MenuItem>
       ),
-      link: '/pool/v2',
+      link: '/pool',
       external: false,
     },
     {
@@ -269,7 +269,7 @@ export default function Pool() {
                 <RowFixed>
                   <ButtonOutlined
                     as={Link}
-                    to="/pool/v2"
+                    to="/pool"
                     id="import-pool-link"
                     style={{
                       padding: '8px 16px',
@@ -283,7 +283,7 @@ export default function Pool() {
 
                     <Trans>View V2 Liquidity</Trans>
                   </ButtonOutlined>
-                  {positions && positions.length > 0 && (
+                  {/* {positions && positions.length > 0 && (
                     <ButtonOutlined
                       as={Link}
                       to="/migrate/v2"
@@ -300,7 +300,7 @@ export default function Pool() {
 
                       <Trans>Migrate Liquidity</Trans>
                     </ButtonOutlined>
-                  )}
+                  )} */}
                 </RowFixed>
               )}
               {closedPositions.length > 0 ? (

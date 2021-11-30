@@ -115,22 +115,22 @@ export default function MigrateV2() {
     <>
       <BodyWrapper style={{ padding: 24 }}>
         <AutoColumn gap="16px">
-          <AutoRow style={{ alignItems: 'center', justifyContent: 'space-between' }} gap="8px">
-            <BackArrow to="/pool/v2" />
+          {/* <AutoRow style={{ alignItems: 'center', justifyContent: 'space-between' }} gap="8px">
+            <BackArrow to="/pool" />
             <TYPE.mediumHeader>
               <Trans>Migrate V2 Liquidity</Trans>
             </TYPE.mediumHeader>
             <div>
               <QuestionHelper text={<Trans>Migrate your liquidity tokens from Uniswap V2 to Uniswap V3.</Trans>} />
             </div>
-          </AutoRow>
+          </AutoRow> */}
 
-          <TYPE.body style={{ marginBottom: 8, fontWeight: 400 }}>
+          {/* <TYPE.body style={{ marginBottom: 8, fontWeight: 400 }}>
             <Trans>
               For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into
               Uniswap V3.
             </Trans>
-          </TYPE.body>
+          </TYPE.body> */}
 
           {!account ? (
             <LightCard padding="40px">

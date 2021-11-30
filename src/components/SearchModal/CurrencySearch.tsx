@@ -78,6 +78,7 @@ export function CurrencySearch({
 
   const [searchQuery, setSearchQuery] = useState<string>('')
   const debouncedQuery = useDebounce(searchQuery, 200)
+  // console.log('debouncedQuery', debouncedQuery)
 
   const [invertSearchOrder] = useState<boolean>(false)
 

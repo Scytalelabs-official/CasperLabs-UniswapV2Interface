@@ -54,6 +54,7 @@ function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean):
 
 export function useAllTokens(): { [address: string]: Token } {
   const allTokens = useCombinedActiveList()
+  console.log('allTokens', allTokens)
   return useTokensFromMap(allTokens, true)
 }
 
@@ -176,6 +177,7 @@ function parseStringOrBytes32(str: string | undefined, bytes32: string | undefin
 export function useToken(tokenAddress?: string | null): Token | undefined | null {
   const { chainId } = useActiveWeb3React()
   const tokens = useAllTokens()
+  console.log('tokens', tokens)
 
   const address = isAddress(tokenAddress)
 

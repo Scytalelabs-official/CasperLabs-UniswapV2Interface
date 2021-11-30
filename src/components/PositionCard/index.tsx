@@ -309,7 +309,7 @@ export default function FullPositionCard({ pair, border, stakedBalance }: Positi
             </ButtonSecondary>
             {userDefaultPoolBalance && JSBI.greaterThan(userDefaultPoolBalance.quotient, BIG_INT_ZERO) && (
               <RowBetween marginTop="10px">
-                <ButtonPrimary
+                {/* <ButtonPrimary
                   padding="8px"
                   $borderRadius="8px"
                   as={Link}
@@ -317,7 +317,7 @@ export default function FullPositionCard({ pair, border, stakedBalance }: Positi
                   width="32%"
                 >
                   <Trans>Migrate</Trans>
-                </ButtonPrimary>
+                </ButtonPrimary> */}
                 <ButtonPrimary
                   padding="8px"
                   $borderRadius="8px"

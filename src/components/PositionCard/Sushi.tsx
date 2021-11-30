@@ -57,7 +57,7 @@ export default function SushiPositionCard({ tokenA, tokenB, liquidityToken, bord
 
             <Badge variant={BadgeVariant.WARNING}>Sushi</Badge>
           </AutoRow>
-          <RowFixed gap="8px">
+          {/* <RowFixed gap="8px">
             <ButtonEmpty
               padding="0px 35px 0px 0px"
               $borderRadius="12px"
@@ -67,7 +67,7 @@ export default function SushiPositionCard({ tokenA, tokenB, liquidityToken, bord
             >
               <Trans>Migrate</Trans>
             </ButtonEmpty>
-          </RowFixed>
+          </RowFixed> */}
         </FixedHeightRow>
       </AutoColumn>
     </StyledPositionCard>
