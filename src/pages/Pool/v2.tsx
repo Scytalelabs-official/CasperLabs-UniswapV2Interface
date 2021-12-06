@@ -226,7 +226,7 @@ export default function Pool() {
                   <ButtonSecondary>
                     <RowBetween>
                       <Trans>
-                        <ExternalLink href={'https://v2.info.uniswap.org/account/' + account}>
+                        <ExternalLink href={'https://casper-uniswap-v2-info.herokuapp.com/accounts/' + account}>
                           Account analytics and accrued fees
                         </ExternalLink>
                         <span> ↗ </span>
