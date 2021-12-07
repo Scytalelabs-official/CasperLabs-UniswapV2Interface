@@ -11,7 +11,7 @@ import { ArrowLeft, ArrowRight, Info } from 'react-feather'
 import ReactGA from 'react-ga'
 import styled from 'styled-components/macro'
 
-import MetamaskIcon from '../../assets/images/metamask.png'
+import MetamaskIcon from '../../assets/images/cspr.png'
 import { ReactComponent as Close } from '../../assets/images/x.svg'
 import { fortmatic, injected, portis } from '../../connectors'
 import { OVERLAY_READY } from '../../connectors/Fortmatic'
@@ -394,9 +394,9 @@ export default function WalletModal({
               <AutoRow style={{ flexWrap: 'nowrap' }}>
                 <TYPE.black fontSize={14}>
                   <Trans>
-                    By connecting a wallet, you agree to Uniswap Labs’{' '}
+                    By connecting a wallet, you agree to Casperswap Labs’{' '}
                     <ExternalLink href="https://uniswap.org/terms-of-service/">Terms of Service</ExternalLink> and
-                    acknowledge that you have read and understand the Uniswap{' '}
+                    acknowledge that you have read and understand the Casperswap{' '}
                     <ExternalLink href="https://uniswap.org/disclaimer/">Protocol Disclaimer</ExternalLink>.
                   </Trans>
                 </TYPE.black>

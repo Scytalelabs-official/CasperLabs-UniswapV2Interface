@@ -142,8 +142,8 @@ msgid "Add"
 msgstr "เพิ่ม"
 
 #: src/components/AccountDetails/TransactionSummary.tsx
-msgid "Add <0/> and <1/> to Uniswap V2"
-msgstr "เพิ่ม <0/> และ <1/> ไปยัง Uniswap V2"
+msgid "Add <0/> and <1/> to Casperswap V2"
+msgstr "เพิ่ม <0/> และ <1/> ไปยัง Casperswap V2"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Add Delegate +"
@@ -199,8 +199,8 @@ msgid "Allow high price impact trades and skip the confirm screen. Use at your o
 msgstr "อนุญาตให้ทำการซื้อขายที่กระทบราคาสูงและข้ามหน้าจอยืนยัน ใช้ความเสี่ยงของคุณเอง"
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Uniswap Protocol to use your {0}"
-msgstr "อนุญาตให้ Uniswap Protocol ใช้ {0}"
+msgid "Allow the Casperswap Protocol to use your {0}"
+msgstr "อนุญาตให้ Casperswap Protocol ใช้ {0}"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "Allowed"
@@ -215,8 +215,8 @@ msgid "Amount"
 msgstr "จำนวน"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "เกิดข้อผิดพลาดขณะพยายามดำเนินการสลับนี้ คุณอาจต้องเพิ่มความทนทานต่อการเลื่อนหลุด หากไม่ได้ผล อาจมีความไม่เข้ากันกับโทเค็นที่คุณกำลังซื้อขาย หมายเหตุ: ค่าธรรมเนียมการโอนและโทเค็นการรีเบสเข้ากันไม่ได้กับ Uniswap V3"
+msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note: fee on transfer and rebase tokens are incompatible with Casperswap V3."
+msgstr "เกิดข้อผิดพลาดขณะพยายามดำเนินการสลับนี้ คุณอาจต้องเพิ่มความทนทานต่อการเลื่อนหลุด หากไม่ได้ผล อาจมีความไม่เข้ากันกับโทเค็นที่คุณกำลังซื้อขาย หมายเหตุ: ค่าธรรมเนียมการโอนและโทเค็นการรีเบสเข้ากันไม่ได้กับ Casperswap V3"
 
 #: src/components/earn/StakingModal.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -268,8 +268,8 @@ msgid "Are you sure?"
 msgstr "คุณแน่ใจไหม?"
 
 #: src/components/claim/ClaimModal.tsx
-msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-msgstr "ในฐานะสมาชิกของชุมชน Uniswap คุณอาจอ้างว่า UNI ใช้สำหรับการลงคะแนนและการกำกับดูแล<0/><1/><2>อ่านเพิ่มเติมเกี่ยวกับ UNI</2>"
+msgid "As a member of the Casperswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
+msgstr "ในฐานะสมาชิกของชุมชน Casperswap คุณอาจอ้างว่า UNI ใช้สำหรับการลงคะแนนและการกำกับดูแล<0/><1/><2>อ่านเพิ่มเติมเกี่ยวกับ UNI</2>"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -328,8 +328,8 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "การเพิ่มรายการนี้แสดงว่าคุณเชื่อมั่นโดยปริยายว่าข้อมูลถูกต้อง ใครๆ ก็สร้างรายการได้ ซึ่งรวมถึงการสร้างเวอร์ชันปลอมของรายการที่มีอยู่และรายการที่อ้างว่าเป็นตัวแทนของโครงการที่ไม่มีอยู่"
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the Uniswap <1>Protocol Disclaimer</1>."
-msgstr "การเชื่อมต่อกระเป๋าเงินหมายความว่าคุณยอมรับข้อกำหนดในการให้บริการ <0></0> และรับทราบว่าคุณได้อ่านและทำความเข้าใจ Uniswap <1>Protocol Disclaimer</1>แล้ว"
+msgid "By connecting a wallet, you agree to Casperswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the Casperswap <1>Protocol Disclaimer</1>."
+msgstr "การเชื่อมต่อกระเป๋าเงินหมายความว่าคุณยอมรับข้อกำหนดในการให้บริการ <0></0> และรับทราบว่าคุณได้อ่านและทำความเข้าใจ Casperswap <1>Protocol Disclaimer</1>แล้ว"
 
 #: src/pages/Vote/styled.tsx
 msgid "Canceled"
@@ -629,8 +629,8 @@ msgid "Deposit liquidity"
 msgstr "สภาพคล่องในการฝาก"
 
 #: src/pages/Earn/index.tsx
-msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
-msgstr "ฝากโทเค็นผู้ให้บริการสภาพคล่องของคุณเพื่อรับ UNI ซึ่งเป็นโทเค็นการกำกับดูแลโปรโตคอล Uniswap"
+msgid "Deposit your Liquidity Provider tokens to receive UNI, the Casperswap protocol governance token."
+msgstr "ฝากโทเค็นผู้ให้บริการสภาพคล่องของคุณเพื่อรับ UNI ซึ่งเป็นโทเค็นการกำกับดูแลโปรโตคอล Casperswap"
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
@@ -677,8 +677,8 @@ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 msgstr "ไม่เห็นหนึ่งในตำแหน่ง v2 ของคุณใช่หรือไม่ <0>นำเข้า.</0>"
 
 #: src/components/vote/DelegateModal.tsx
-msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-msgstr "โทเค็น UNI ที่ได้รับแสดงถึงการลงคะแนนเสียงในการกำกับดูแล Uniswap"
+msgid "Earned UNI tokens represent voting shares in Casperswap governance."
+msgstr "โทเค็น UNI ที่ได้รับแสดงถึงการลงคะแนนเสียงในการกำกับดูแล Casperswap"
 
 #: src/components/FeeSelector/index.tsx
 msgid "Edit"
@@ -762,8 +762,8 @@ msgid "Expired"
 msgstr "หมดอายุ"
 
 #: src/pages/Pool/CTACards.tsx
-msgid "Explore popular pools on Uniswap Analytics."
-msgstr "สำรวจกลุ่มยอดนิยมบน Uniswap Analytics"
+msgid "Explore popular pools on Casperswap Analytics."
+msgstr "สำรวจกลุ่มยอดนิยมบน Casperswap Analytics"
 
 #: src/components/Header/NetworkSelector.tsx
 msgid "Explorer"
@@ -782,8 +782,8 @@ msgid "For"
 msgstr "สำหรับ"
 
 #: src/pages/MigrateV2/index.tsx
-msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
-msgstr "สำหรับแต่ละกลุ่มที่แสดงด้านล่าง ให้คลิกย้ายเพื่อลบสภาพคล่องของคุณออกจาก Uniswap V2 และฝากเข้า Uniswap V3"
+msgid "For each pool shown below, click migrate to remove your liquidity from Casperswap V2 and deposit it into Casperswap V3."
+msgstr "สำหรับแต่ละกลุ่มที่แสดงด้านล่าง ให้คลิกย้ายเพื่อลบสภาพคล่องของคุณออกจาก Casperswap V2 และฝากเข้า Casperswap V3"
 
 #: src/components/swap/SwapModalHeader.tsx
 #: src/pages/Swap/index.tsx
@@ -1057,8 +1057,8 @@ msgid "Migrate V2 Liquidity"
 msgstr "โยกย้ายสภาพคล่อง V2"
 
 #: src/pages/MigrateV2/index.tsx
-msgid "Migrate your liquidity tokens from Uniswap V2 to Uniswap V3."
-msgstr "ย้ายโทเค็นสภาพคล่องของคุณจาก Uniswap V2 เป็น Uniswap V3"
+msgid "Migrate your liquidity tokens from Casperswap V2 to Casperswap V3."
+msgstr "ย้ายโทเค็นสภาพคล่องของคุณจาก Casperswap V2 เป็น Casperswap V3"
 
 #: src/components/AccountDetails/TransactionSummary.tsx
 msgid "Migrate {0}/{1} liquidity to V3"
@@ -1346,8 +1346,8 @@ msgid "Read more about UNI"
 msgstr "อ่านเพิ่มเติมเกี่ยวกับ UNI"
 
 #: src/pages/Vote/Landing.tsx
-msgid "Read more about Uniswap governance"
-msgstr "อ่านเพิ่มเติมเกี่ยวกับการกำกับดูแล Uniswap"
+msgid "Read more about Casperswap governance"
+msgstr "อ่านเพิ่มเติมเกี่ยวกับการกำกับดูแล Casperswap"
 
 #: src/pages/Pool/v2.tsx
 msgid "Read more about providing liquidity"
@@ -1562,16 +1562,16 @@ msgid "Swapping {0} {1} for {2} {3}"
 msgstr "สลับ {0} {1} เป็น {2} {3}"
 
 #: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the Uniswap community <0/>"
-msgstr "ขอบคุณที่เป็นส่วนหนึ่งของชุมชน Uniswap <0/>"
+msgid "Thanks for being part of the Casperswap community <0/>"
+msgstr "ขอบคุณที่เป็นส่วนหนึ่งของชุมชน Casperswap <0/>"
 
 #: src/components/FeeSelector/index.tsx
 msgid "The % you will earn in fees."
 msgstr "% ที่คุณจะได้รับเป็นค่าธรรมเนียม"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
-msgstr "ค่าคงที่ Uniswap x*y=k ไม่พอใจโดยการแลกเปลี่ยน ซึ่งมักจะหมายถึงหนึ่งในโทเค็นที่คุณกำลังแลกเปลี่ยนรวมลักษณะการทำงานที่กำหนดเองในการโอน"
+msgid "The Casperswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
+msgstr "ค่าคงที่ Casperswap x*y=k ไม่พอใจโดยการแลกเปลี่ยน ซึ่งมักจะหมายถึงหนึ่งในโทเค็นที่คุณกำลังแลกเปลี่ยนรวมลักษณะการทำงานที่กำหนดเองในการโอน"
 
 #: src/components/PrivacyPolicy/index.tsx
 msgid "The app fetches blockchain data from The Graph’s hosted service."
@@ -1582,8 +1582,8 @@ msgid "The app fetches on-chain data and constructs contract calls with an Infur
 msgstr "แอปดึงข้อมูลในสายโซ่และสร้างการเรียกสัญญาด้วย Infura API"
 
 #: src/components/PrivacyPolicy/index.tsx
-msgid "The app fetches the optimal trade route from a Uniswap Labs server."
-msgstr "แอพดึงเส้นทางการค้าที่เหมาะสมที่สุดจากเซิร์ฟเวอร์ Uniswap Labs"
+msgid "The app fetches the optimal trade route from a Casperswap Labs server."
+msgstr "แอพดึงเส้นทางการค้าที่เหมาะสมที่สุดจากเซิร์ฟเวอร์ Casperswap Labs"
 
 #: src/components/PrivacyPolicy/index.tsx
 msgid "The app logs anonymized usage statistics in order to improve over time."
@@ -1606,8 +1606,8 @@ msgid "The output token cannot be transferred. There may be an issue with the ou
 msgstr "ไม่สามารถโอนโทเค็นเอาต์พุตได้ อาจมีปัญหากับโทเค็นเอาต์พุต"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "The output token cannot be transferred. There may be an issue with the output token. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "ไม่สามารถโอนโทเค็นเอาต์พุตได้ อาจมีปัญหากับโทเค็นเอาต์พุต หมายเหตุ: ค่าธรรมเนียมการโอนและโทเค็นการรีเบสเข้ากันไม่ได้กับ Uniswap V3"
+msgid "The output token cannot be transferred. There may be an issue with the output token. Note: fee on transfer and rebase tokens are incompatible with Casperswap V3."
+msgstr "ไม่สามารถโอนโทเค็นเอาต์พุตได้ อาจมีปัญหากับโทเค็นเอาต์พุต หมายเหตุ: ค่าธรรมเนียมการโอนและโทเค็นการรีเบสเข้ากันไม่ได้กับ Casperswap V3"
 
 #: src/components/Badge/RangeBadge.tsx
 msgid "The price of this pool is outside of your selected range. Your position is not currently earning fees."
@@ -1650,16 +1650,16 @@ msgid "This token doesn't appear on the active token list(s). Make sure this is 
 msgstr "โทเค็นนี้ไม่ปรากฏในรายการโทเค็นที่ใช้งานอยู่ ตรวจสอบให้แน่ใจว่านี่คือโทเค็นที่คุณต้องการซื้อขาย"
 
 #: src/components/SearchModal/BlockedToken.tsx
-msgid "This token is not supported in the Uniswap Labs app"
-msgstr "ไม่รองรับโทเค็นนี้ในแอป Uniswap Labs"
+msgid "This token is not supported in the Casperswap Labs app"
+msgstr "ไม่รองรับโทเค็นนี้ในแอป Casperswap Labs"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "This tool will safely migrate your {0} liquidity to V3. The process is completely trustless thanks to the"
 msgstr "เครื่องมือนี้จะย้าย {0} ของคุณไปยัง V3 อย่างปลอดภัย กระบวนการนี้ไม่น่าเชื่อถืออย่างสมบูรณ์ต้องขอบคุณ"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "ธุรกรรมนี้จะไม่สำเร็จเนื่องจากการเคลื่อนไหวของราคา ลองเพิ่มความทนทานต่อการเลื่อนหลุด หมายเหตุ: ค่าธรรมเนียมการโอนและโทเค็นการรีเบสเข้ากันไม่ได้กับ Uniswap V3"
+msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Casperswap V3."
+msgstr "ธุรกรรมนี้จะไม่สำเร็จเนื่องจากการเคลื่อนไหวของราคา ลองเพิ่มความทนทานต่อการเลื่อนหลุด หมายเหตุ: ค่าธรรมเนียมการโอนและโทเค็นการรีเบสเข้ากันไม่ได้กับ Casperswap V3"
 
 #: src/hooks/useSwapCallback.tsx
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
@@ -1773,8 +1773,8 @@ msgid "UNI price:"
 msgstr "ราคายูนิ:"
 
 #: src/pages/Vote/Landing.tsx
-msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
-msgstr "โทเค็นของ UNI เป็นตัวแทนของการลงคะแนนเสียงในการกำกับดูแล Uniswap คุณสามารถลงคะแนนในแต่ละข้อเสนอด้วยตัวเองหรือมอบสิทธิ์การโหวตของคุณให้กับบุคคลที่สาม"
+msgid "UNI tokens represent voting shares in Casperswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
+msgstr "โทเค็นของ UNI เป็นตัวแทนของการลงคะแนนเสียงในการกำกับดูแล Casperswap คุณสามารถลงคะแนนในแต่ละข้อเสนอด้วยตัวเองหรือมอบสิทธิ์การโหวตของคุณให้กับบุคคลที่สาม"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "UNI {0}/{1} Burned"
@@ -1814,40 +1814,40 @@ msgid "Unexpected issue with estimating the gas. Please try again."
 msgstr "ปัญหาที่ไม่คาดคิดกับการประมาณค่าก๊าซ กรุณาลองอีกครั้ง."
 
 #: src/pages/Vote/Landing.tsx
-msgid "Uniswap Governance"
-msgstr "การกำกับดูแล Uniswap"
+msgid "Casperswap Governance"
+msgstr "การกำกับดูแล Casperswap"
 
 #: src/components/PrivacyPolicy/index.tsx
-msgid "Uniswap Labs' Terms of Service"
-msgstr "ข้อกำหนดในการให้บริการของ Uniswap Labs"
+msgid "Casperswap Labs' Terms of Service"
+msgstr "ข้อกำหนดในการให้บริการของ Casperswap Labs"
 
 #: src/components/SwitchLocaleLink/index.tsx
-msgid "Uniswap available in: <0>{0}</0>"
-msgstr "Uniswap มีให้ใน: <0>{0}</0>"
+msgid "Casperswap available in: <0>{0}</0>"
+msgstr "Casperswap มีให้ใน: <0>{0}</0>"
 
 #: src/components/vote/ProposalEmptyState.tsx
-msgid "Uniswap governance is only available on Layer 1. Switch your network to Ethereum Mainnet to view Proposals and Vote."
-msgstr "การกำกับดูแล Uniswap ใช้ได้เฉพาะในเลเยอร์ 1 เท่านั้น เปลี่ยนเครือข่ายของคุณเป็น Ethereum Mainnet เพื่อดูข้อเสนอและการโหวต"
+msgid "Casperswap governance is only available on Layer 1. Switch your network to Ethereum Mainnet to view Proposals and Vote."
+msgstr "การกำกับดูแล Casperswap ใช้ได้เฉพาะในเลเยอร์ 1 เท่านั้น เปลี่ยนเครือข่ายของคุณเป็น Ethereum Mainnet เพื่อดูข้อเสนอและการโหวต"
 
 #: src/pages/Earn/index.tsx
-msgid "Uniswap liquidity mining"
-msgstr "การขุดสภาพคล่อง Uniswap"
+msgid "Casperswap liquidity mining"
+msgstr "การขุดสภาพคล่อง Casperswap"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Uniswap migration contract↗"
-msgstr "สัญญาการโยกย้าย Uniswap↗"
+msgid "Casperswap migration contract↗"
+msgstr "สัญญาการโยกย้าย Casperswap↗"
 
 #: src/components/NetworkAlert/NetworkAlert.tsx
-msgid "Uniswap on {0}"
-msgstr "Uniswap บน {0}"
+msgid "Casperswap on {0}"
+msgstr "Casperswap บน {0}"
 
 #: src/components/SearchModal/TokenImportCard.tsx
 msgid "Unknown Source"
 msgstr "ไม่ทราบแหล่งที่มา"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "Unknown error{0}. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "ข้อผิดพลาดที่ไม่รู้จัก{0}ลองเพิ่มความทนทานต่อการเลื่อนหลุด หมายเหตุ: ค่าธรรมเนียมการโอนและโทเค็นการรีเบสเข้ากันไม่ได้กับ Uniswap V3"
+msgid "Unknown error{0}. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Casperswap V3."
+msgstr "ข้อผิดพลาดที่ไม่รู้จัก{0}ลองเพิ่มความทนทานต่อการเลื่อนหลุด หมายเหตุ: ค่าธรรมเนียมการโอนและโทเค็นการรีเบสเข้ากันไม่ได้กับ Casperswap V3"
 
 #: src/pages/Vote/Landing.tsx
 #: src/pages/Vote/VotePage.tsx
@@ -1893,8 +1893,8 @@ msgid "Update list"
 msgstr "อัพเดทรายการ"
 
 #: src/components/Settings/index.tsx
-msgid "Use the Uniswap Labs API to get better pricing through a more efficient route."
-msgstr "ใช้ Uniswap Labs API เพื่อรับราคาที่ดีขึ้นผ่านเส้นทางที่มีประสิทธิภาพยิ่งขึ้น"
+msgid "Use the Casperswap Labs API to get better pricing through a more efficient route."
+msgstr "ใช้ Casperswap Labs API เพื่อรับราคาที่ดีขึ้นผ่านเส้นทางที่มีประสิทธิภาพยิ่งขึ้น"
 
 #: src/components/claim/ClaimModal.tsx
 msgid "User"
@@ -2089,8 +2089,8 @@ msgid "You are creating a pool"
 msgstr "คุณกำลังสร้างพูล"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
-msgstr "คุณเป็นผู้ให้บริการสภาพคล่องรายแรกสำหรับกลุ่ม Uniswap V3 นี้ สภาพคล่องของคุณจะถูกย้ายที่ราคา {0}"
+msgid "You are the first liquidity provider for this Casperswap V3 pool. Your liquidity will migrate at the current {0} price."
+msgstr "คุณเป็นผู้ให้บริการสภาพคล่องรายแรกสำหรับกลุ่ม Casperswap V3 นี้ สภาพคล่องของคุณจะถูกย้ายที่ราคา {0}"
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "You are the first liquidity provider."
@@ -2125,16 +2125,16 @@ msgid "You must connect an account."
 msgstr "คุณต้องเชื่อมต่อบัญชี"
 
 #: src/pages/Swap/index.tsx
-msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-msgstr "คุณต้องให้สิทธิ์สัญญาอัจฉริยะ Uniswap เพื่อใช้ {0}คุณต้องทำเช่นนี้เพียงครั้งเดียวต่อโทเค็น"
+msgid "You must give the Casperswap smart contracts permission to use your {0}. You only have to do this once per token."
+msgstr "คุณต้องให้สิทธิ์สัญญาอัจฉริยะ Casperswap เพื่อใช้ {0}คุณต้องทำเช่นนี้เพียงครั้งเดียวต่อโทเค็น"
 
 #: src/pages/CreateProposal/index.tsx
 msgid "You must have {formattedProposalThreshold} votes to submit a proposal"
 msgstr "คุณต้องมี {formattedProposalThreshold} โหวตเพื่อส่งข้อเสนอ"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
-msgstr "คุณควรฝากสภาพคล่องเข้า Uniswap V3 ในราคาที่คุณเชื่อว่าถูกต้องเท่านั้น <0/>หากราคาดูเหมือนไม่ถูกต้อง คุณสามารถทำการแลกเปลี่ยนเพื่อย้ายราคาหรือรอให้คนอื่นทำ"
+msgid "You should only deposit liquidity into Casperswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
+msgstr "คุณควรฝากสภาพคล่องเข้า Casperswap V3 ในราคาที่คุณเชื่อว่าถูกต้องเท่านั้น <0/>หากราคาดูเหมือนไม่ถูกต้อง คุณสามารถทำการแลกเปลี่ยนเพื่อย้ายราคาหรือรอให้คนอื่นทำ"
 
 #: src/pages/RemoveLiquidity/V3.tsx
 msgid "You will also collect fees earned from this position."

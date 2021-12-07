@@ -142,7 +142,7 @@ msgid "Add"
 msgstr "追加"
 
 #: src/components/AccountDetails/TransactionSummary.tsx
-msgid "Add <0/> and <1/> to Uniswap V2"
+msgid "Add <0/> and <1/> to Casperswap V2"
 msgstr "<0/>と<1/>をユニスワップV2に追加"
 
 #: src/components/vote/DelegateModal.tsx
@@ -199,8 +199,8 @@ msgid "Allow high price impact trades and skip the confirm screen. Use at your o
 msgstr "価格への大きな影響がある取引を許可し、確認画面をスキップします。自己責任でご利用ください。"
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Uniswap Protocol to use your {0}"
-msgstr "{0} の使用をUniswapに許可する"
+msgid "Allow the Casperswap Protocol to use your {0}"
+msgstr "{0} の使用をCasperswapに許可する"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "Allowed"
@@ -215,8 +215,8 @@ msgid "Amount"
 msgstr "数量"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "スワップ実行時にエラーが発生しました。スリッページの許容範囲を広げる必要がある可能性があります。それでも上手くいかない場合、取引しているトークンとの互換性がない可能性があります。注：転送時に手数料が発生するトークンおよびリベースするトークンは、UniswapV3と互換性がありません。"
+msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note: fee on transfer and rebase tokens are incompatible with Casperswap V3."
+msgstr "スワップ実行時にエラーが発生しました。スリッページの許容範囲を広げる必要がある可能性があります。それでも上手くいかない場合、取引しているトークンとの互換性がない可能性があります。注：転送時に手数料が発生するトークンおよびリベースするトークンは、CasperswapV3と互換性がありません。"
 
 #: src/components/earn/StakingModal.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -268,8 +268,8 @@ msgid "Are you sure?"
 msgstr "本当によろしいですか？"
 
 #: src/components/claim/ClaimModal.tsx
-msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-msgstr "Uniswapコミュニティのメンバーとして、投票とガバナンスのためにUNIを使用できます。<0/><1/><2>UNIについてもっと見る</2>"
+msgid "As a member of the Casperswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
+msgstr "Casperswapコミュニティのメンバーとして、投票とガバナンスのためにUNIを使用できます。<0/><1/><2>UNIについてもっと見る</2>"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -328,8 +328,8 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "このリストを追加することで、データが正しいことを暗黙的に信頼することになります。 誰でもリストを作成することができます。そのため、既存リストの偽のバージョンや、実体のないプロジェクトを掲載するリストが作成されている可能性があります。"
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the Uniswap <1>Protocol Disclaimer</1>."
-msgstr "ウォレットを接続することにより、あなたはUniswap Labsのに <0>サービス規約</0>に同意し、あなたがUniswap<1>プロトコル免責事項</1>を読み、理解していることに同意するものとします。"
+msgid "By connecting a wallet, you agree to Casperswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the Casperswap <1>Protocol Disclaimer</1>."
+msgstr "ウォレットを接続することにより、あなたはCasperswap Labsのに <0>サービス規約</0>に同意し、あなたがCasperswap<1>プロトコル免責事項</1>を読み、理解していることに同意するものとします。"
 
 #: src/pages/Vote/styled.tsx
 msgid "Canceled"
@@ -629,8 +629,8 @@ msgid "Deposit liquidity"
 msgstr "流動性を預ける"
 
 #: src/pages/Earn/index.tsx
-msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
-msgstr "流動性トークンを預けて、UniswapプロトコルのガバナンストークンであるUNIを受け取ります。"
+msgid "Deposit your Liquidity Provider tokens to receive UNI, the Casperswap protocol governance token."
+msgstr "流動性トークンを預けて、CasperswapプロトコルのガバナンストークンであるUNIを受け取ります。"
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
@@ -677,8 +677,8 @@ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 msgstr "V2の流動性が表示されない場合、該当のトークンを<0>インポート</0>してください"
 
 #: src/components/vote/DelegateModal.tsx
-msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-msgstr "保有するUNIトークンは、Uniswapのガバナンスにおける投票権を表します。"
+msgid "Earned UNI tokens represent voting shares in Casperswap governance."
+msgstr "保有するUNIトークンは、Casperswapのガバナンスにおける投票権を表します。"
 
 #: src/components/FeeSelector/index.tsx
 msgid "Edit"
@@ -762,8 +762,8 @@ msgid "Expired"
 msgstr "期限切れ"
 
 #: src/pages/Pool/CTACards.tsx
-msgid "Explore popular pools on Uniswap Analytics."
-msgstr "Uniswap分析サイトで人気のあるプールを探しましょう。"
+msgid "Explore popular pools on Casperswap Analytics."
+msgstr "Casperswap分析サイトで人気のあるプールを探しましょう。"
 
 #: src/components/Header/NetworkSelector.tsx
 msgid "Explorer"
@@ -782,8 +782,8 @@ msgid "For"
 msgstr "賛成"
 
 #: src/pages/MigrateV2/index.tsx
-msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
-msgstr "以下の各流動性について「移行」ボタンをクリックすると、Uniswap V2から流動性を取り出し、Uniswap V3に移行します。"
+msgid "For each pool shown below, click migrate to remove your liquidity from Casperswap V2 and deposit it into Casperswap V3."
+msgstr "以下の各流動性について「移行」ボタンをクリックすると、Casperswap V2から流動性を取り出し、Casperswap V3に移行します。"
 
 #: src/components/swap/SwapModalHeader.tsx
 #: src/pages/Swap/index.tsx
@@ -1057,8 +1057,8 @@ msgid "Migrate V2 Liquidity"
 msgstr "V2の流動性を移行"
 
 #: src/pages/MigrateV2/index.tsx
-msgid "Migrate your liquidity tokens from Uniswap V2 to Uniswap V3."
-msgstr "Uniswap V2からUniswap V3に流動性トークンを移行します。"
+msgid "Migrate your liquidity tokens from Casperswap V2 to Casperswap V3."
+msgstr "Casperswap V2からCasperswap V3に流動性トークンを移行します。"
 
 #: src/components/AccountDetails/TransactionSummary.tsx
 msgid "Migrate {0}/{1} liquidity to V3"
@@ -1346,8 +1346,8 @@ msgid "Read more about UNI"
 msgstr "UNIについてもっと見る"
 
 #: src/pages/Vote/Landing.tsx
-msgid "Read more about Uniswap governance"
-msgstr "Uniswapガバナンスについてもっと見る"
+msgid "Read more about Casperswap governance"
+msgstr "Casperswapガバナンスについてもっと見る"
 
 #: src/pages/Pool/v2.tsx
 msgid "Read more about providing liquidity"
@@ -1562,16 +1562,16 @@ msgid "Swapping {0} {1} for {2} {3}"
 msgstr "{0} {1} を {2} {3} にスワップ中"
 
 #: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the Uniswap community <0/>"
-msgstr "Uniswapコミュニティにご参加いただきありがとうございます <0/>"
+msgid "Thanks for being part of the Casperswap community <0/>"
+msgstr "Casperswapコミュニティにご参加いただきありがとうございます <0/>"
 
 #: src/components/FeeSelector/index.tsx
 msgid "The % you will earn in fees."
 msgstr "設定する手数料率"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
-msgstr "Uniswap不変式 x * y = kはスワップで満たされませんでした。これは通常、スワップするトークンの1つが転送時のカスタム動作を組み込んでいることを意味します。"
+msgid "The Casperswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
+msgstr "Casperswap不変式 x * y = kはスワップで満たされませんでした。これは通常、スワップするトークンの1つが転送時のカスタム動作を組み込んでいることを意味します。"
 
 #: src/components/PrivacyPolicy/index.tsx
 msgid "The app fetches blockchain data from The Graph’s hosted service."
@@ -1582,8 +1582,8 @@ msgid "The app fetches on-chain data and constructs contract calls with an Infur
 msgstr "アプリはオンチェーンデータをフェッチし、InfuraAPIを使用してコントラクト呼び出しを構築します。"
 
 #: src/components/PrivacyPolicy/index.tsx
-msgid "The app fetches the optimal trade route from a Uniswap Labs server."
-msgstr "アプリは、UniswapLabsサーバーから最適な取引ルートを取得します。"
+msgid "The app fetches the optimal trade route from a Casperswap Labs server."
+msgstr "アプリは、CasperswapLabsサーバーから最適な取引ルートを取得します。"
 
 #: src/components/PrivacyPolicy/index.tsx
 msgid "The app logs anonymized usage statistics in order to improve over time."
@@ -1606,8 +1606,8 @@ msgid "The output token cannot be transferred. There may be an issue with the ou
 msgstr "購入するトークンを転送できません。購入するトークンに問題がある可能性があります。"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "The output token cannot be transferred. There may be an issue with the output token. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "購入するトークンを転送できません。購入するトークンに問題がある可能性があります。注：転送時に手数料が発生するトークンおよびリベースするトークンは、UniswapV3と互換性がありません。"
+msgid "The output token cannot be transferred. There may be an issue with the output token. Note: fee on transfer and rebase tokens are incompatible with Casperswap V3."
+msgstr "購入するトークンを転送できません。購入するトークンに問題がある可能性があります。注：転送時に手数料が発生するトークンおよびリベースするトークンは、CasperswapV3と互換性がありません。"
 
 #: src/components/Badge/RangeBadge.tsx
 msgid "The price of this pool is outside of your selected range. Your position is not currently earning fees."
@@ -1650,16 +1650,16 @@ msgid "This token doesn't appear on the active token list(s). Make sure this is 
 msgstr "このトークンはご利用中のトークンリストに存在しません。取引したいトークンであることを確認してください。"
 
 #: src/components/SearchModal/BlockedToken.tsx
-msgid "This token is not supported in the Uniswap Labs app"
-msgstr "このトークンは、UniswapLabsアプリではサポートされていません"
+msgid "This token is not supported in the Casperswap Labs app"
+msgstr "このトークンは、CasperswapLabsアプリではサポートされていません"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "This tool will safely migrate your {0} liquidity to V3. The process is completely trustless thanks to the"
 msgstr "本ツールで {0} の流動性をV3に安全に移行します。このプロセスは以下によって特定の第三者を信用する必要が一切ないものになっています。"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "価格変動により、この取引は成功しません。スリッページの許容範囲を広げてみてください。注：転送時に手数料が発生するトークンおよびリベーストークンは、UniswapV3と互換性がありません。"
+msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Casperswap V3."
+msgstr "価格変動により、この取引は成功しません。スリッページの許容範囲を広げてみてください。注：転送時に手数料が発生するトークンおよびリベーストークンは、CasperswapV3と互換性がありません。"
 
 #: src/hooks/useSwapCallback.tsx
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
@@ -1773,8 +1773,8 @@ msgid "UNI price:"
 msgstr "UNIの価格:"
 
 #: src/pages/Vote/Landing.tsx
-msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
-msgstr "UNIトークンはUniswapガバナンスにおける投票権を表します。各提案に対して自分で投票するか、もしくは第三者に投票を委任することができます。"
+msgid "UNI tokens represent voting shares in Casperswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
+msgstr "UNIトークンはCasperswapガバナンスにおける投票権を表します。各提案に対して自分で投票するか、もしくは第三者に投票を委任することができます。"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "UNI {0}/{1} Burned"
@@ -1814,31 +1814,31 @@ msgid "Unexpected issue with estimating the gas. Please try again."
 msgstr "ガスの見積もりに関する予期しない問題。もう一度やり直してください。"
 
 #: src/pages/Vote/Landing.tsx
-msgid "Uniswap Governance"
-msgstr "Uniswapのガバナンス"
+msgid "Casperswap Governance"
+msgstr "Casperswapのガバナンス"
 
 #: src/components/PrivacyPolicy/index.tsx
-msgid "Uniswap Labs' Terms of Service"
-msgstr "UniswapLabsの利用規約"
+msgid "Casperswap Labs' Terms of Service"
+msgstr "CasperswapLabsの利用規約"
 
 #: src/components/SwitchLocaleLink/index.tsx
-msgid "Uniswap available in: <0>{0}</0>"
+msgid "Casperswap available in: <0>{0}</0>"
 msgstr "利用可能言語: <0>{0}</0>"
 
 #: src/components/vote/ProposalEmptyState.tsx
-msgid "Uniswap governance is only available on Layer 1. Switch your network to Ethereum Mainnet to view Proposals and Vote."
-msgstr "Uniswapのガバナンスは、レイヤー1でのみ使用できます。提案と投票を表示するために、ネットワークをEthereumメインネットに切り替えて下さい。"
+msgid "Casperswap governance is only available on Layer 1. Switch your network to Ethereum Mainnet to view Proposals and Vote."
+msgstr "Casperswapのガバナンスは、レイヤー1でのみ使用できます。提案と投票を表示するために、ネットワークをEthereumメインネットに切り替えて下さい。"
 
 #: src/pages/Earn/index.tsx
-msgid "Uniswap liquidity mining"
-msgstr "Uniswap流動性マイニング"
+msgid "Casperswap liquidity mining"
+msgstr "Casperswap流動性マイニング"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Uniswap migration contract↗"
-msgstr "Uniswap移行コントラクト↗"
+msgid "Casperswap migration contract↗"
+msgstr "Casperswap移行コントラクト↗"
 
 #: src/components/NetworkAlert/NetworkAlert.tsx
-msgid "Uniswap on {0}"
+msgid "Casperswap on {0}"
 msgstr "{0}ユニスワップ"
 
 #: src/components/SearchModal/TokenImportCard.tsx
@@ -1846,8 +1846,8 @@ msgid "Unknown Source"
 msgstr "不明なソース"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "Unknown error{0}. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "不明なエラー{0}。スリッページの許容範囲を広げてみてください。注：転送時に手数料が発生するトークンおよびリベーストークンは、UniswapV3と互換性がありません。"
+msgid "Unknown error{0}. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Casperswap V3."
+msgstr "不明なエラー{0}。スリッページの許容範囲を広げてみてください。注：転送時に手数料が発生するトークンおよびリベーストークンは、CasperswapV3と互換性がありません。"
 
 #: src/pages/Vote/Landing.tsx
 #: src/pages/Vote/VotePage.tsx
@@ -1893,8 +1893,8 @@ msgid "Update list"
 msgstr "リストを更新"
 
 #: src/components/Settings/index.tsx
-msgid "Use the Uniswap Labs API to get better pricing through a more efficient route."
-msgstr "Uniswap Labs APIを使用して、より効率的なルートでより良い価格を取得します。"
+msgid "Use the Casperswap Labs API to get better pricing through a more efficient route."
+msgstr "Casperswap Labs APIを使用して、より効率的なルートでより良い価格を取得します。"
 
 #: src/components/claim/ClaimModal.tsx
 msgid "User"
@@ -2089,8 +2089,8 @@ msgid "You are creating a pool"
 msgstr "プールを作成しています"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
-msgstr "あなたはUniswap V3プールの最初の流動性提供者です。流動性は現在の {0} での価格で移行されます。"
+msgid "You are the first liquidity provider for this Casperswap V3 pool. Your liquidity will migrate at the current {0} price."
+msgstr "あなたはCasperswap V3プールの最初の流動性提供者です。流動性は現在の {0} での価格で移行されます。"
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "You are the first liquidity provider."
@@ -2125,16 +2125,16 @@ msgid "You must connect an account."
 msgstr "アカウントに接続してください。"
 
 #: src/pages/Swap/index.tsx
-msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-msgstr "{0}を使用するには、Uniswapスマートコントラクトに許可を与える必要があります。トークンごとに1回だけ行う必要があります。"
+msgid "You must give the Casperswap smart contracts permission to use your {0}. You only have to do this once per token."
+msgstr "{0}を使用するには、Casperswapスマートコントラクトに許可を与える必要があります。トークンごとに1回だけ行う必要があります。"
 
 #: src/pages/CreateProposal/index.tsx
 msgid "You must have {formattedProposalThreshold} votes to submit a proposal"
 msgstr "提案を提出するには、{formattedProposalThreshold}票が必要です"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
-msgstr "Uniswap V3への流動性の預け入れは、正しいと思われる価格でのみ行ってください。<0/>もし価格が正しくないと思われる場合は、スワップをして価格を動かすか、他の人が同様のことをするのを待つことができます。"
+msgid "You should only deposit liquidity into Casperswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
+msgstr "Casperswap V3への流動性の預け入れは、正しいと思われる価格でのみ行ってください。<0/>もし価格が正しくないと思われる場合は、スワップをして価格を動かすか、他の人が同様のことをするのを待つことができます。"
 
 #: src/pages/RemoveLiquidity/V3.tsx
 msgid "You will also collect fees earned from this position."

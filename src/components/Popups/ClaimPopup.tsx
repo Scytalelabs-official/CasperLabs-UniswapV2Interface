@@ -5,7 +5,7 @@ import { Heart, X } from 'react-feather'
 import ReactGA from 'react-ga'
 import styled, { keyframes } from 'styled-components/macro'
 
-import tokenLogo from '../../assets/images/token-logo.png'
+import tokenLogo from '../../assets/images/cspr.png'
 import { ButtonPrimary } from '../../components/Button'
 import { useActiveWeb3React } from '../../hooks/web3'
 import {
@@ -21,7 +21,7 @@ import { AutoColumn } from '../Column'
 import { CardBGImage, CardNoise } from '../earn/styled'
 
 const StyledClaimPopup = styled(AutoColumn)`
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #ff007a 0%, #021d43 100%);
+  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #ed0b25 0%, #021d43 100%);
   border-radius: 20px;
   padding: 1.5rem;
   overflow: hidden;
@@ -112,7 +112,7 @@ export default function ClaimPopup() {
             </TYPE.white>
             <TYPE.subHeader style={{ paddingTop: '0.5rem', textAlign: 'center' }} color="white">
               <Trans>
-                Thanks for being part of the Uniswap community <Heart size={12} />
+                Thanks for being part of the Casperswap community <Heart size={12} />
               </Trans>
             </TYPE.subHeader>
           </AutoColumn>

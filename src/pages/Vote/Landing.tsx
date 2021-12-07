@@ -136,7 +136,7 @@ export default function Landing() {
               <AutoColumn gap="md">
                 <RowBetween>
                   <TYPE.white fontWeight={600}>
-                    <Trans>Uniswap Governance</Trans>
+                    <Trans>Casperswap Governance</Trans>
                   </TYPE.white>
                 </RowBetween>
                 <RowBetween>
@@ -153,7 +153,7 @@ export default function Landing() {
                   target="_blank"
                 >
                   <TYPE.white fontSize={14}>
-                    <Trans>Read more about Uniswap governance</Trans>
+                    <Trans>Read more about Casperswap governance</Trans>
                   </TYPE.white>
                 </ExternalLink>
               </AutoColumn>

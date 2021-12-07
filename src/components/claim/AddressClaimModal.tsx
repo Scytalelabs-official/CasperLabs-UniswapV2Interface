@@ -6,7 +6,7 @@ import { Text } from 'rebass'
 import styled from 'styled-components/macro'
 
 import Circle from '../../assets/images/blue-loader.svg'
-import tokenLogo from '../../assets/images/token-logo.png'
+import tokenLogo from '../../assets/images/cspr.png'
 import useENS from '../../hooks/useENS'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useClaimCallback, useUserHasAvailableClaim, useUserUnclaimedAmount } from '../../state/claim/hooks'
@@ -29,7 +29,7 @@ const ContentWrapper = styled(AutoColumn)`
 
 const ModalUpper = styled(DataCard)`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #ff007a 0%, #021d43 100%);
+  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #ed0b25 0%, #021d43 100%);
 `
 
 const ConfirmOrLoadingWrapper = styled.div<{ activeBG: boolean }>`
@@ -38,7 +38,7 @@ const ConfirmOrLoadingWrapper = styled.div<{ activeBG: boolean }>`
   position: relative;
   background: ${({ activeBG }) =>
     activeBG &&
-    'radial-gradient(76.02% 75.41% at 1.84% 0%, rgba(255, 0, 122, 0.2) 0%, rgba(33, 114, 229, 0.2) 100%), #FFFFFF;'};
+    'radial-gradient(76.02% 75.41% at 1.84% 0%, rgba(237, 11, 37, 0.2) 0%, rgba(33, 114, 229, 0.2) 100%), #FFFFFF;'};
 `
 
 const ConfirmedIcon = styled(ColumnCenter)`
@@ -163,7 +163,7 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
                 {claimConfirmed ? <Trans>Claimed</Trans> : <Trans>Claiming</Trans>}
               </TYPE.largeHeader>
               {!claimConfirmed && (
-                <Text fontSize={36} color={'#ff007a'} fontWeight={800}>
+                <Text fontSize={36} color={'#ed0b25'} fontWeight={800}>
                   <Trans>{unclaimedAmount?.toFixed(0, { groupSeparator: ',' } ?? '-')} UNI</Trans>
                 </Text>
               )}

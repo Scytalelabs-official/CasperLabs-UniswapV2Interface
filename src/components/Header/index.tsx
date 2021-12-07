@@ -11,9 +11,9 @@ import { useUserHasAvailableClaim } from 'state/claim/hooks'
 import { useUserHasSubmittedClaim } from 'state/transactions/hooks'
 import { useDarkModeManager } from 'state/user/hooks'
 import { useETHBalances } from 'state/wallet/hooks'
-import styled from 'styled-components/macro'
+import styled, { keyframes } from 'styled-components/macro'
 
-import { ReactComponent as Logo } from '../../assets/svg/logo.svg'
+import Logo from '../../assets/images/cspr.png'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { ExternalLink, TYPE } from '../../theme'
 import ClaimModal from '../claim/ClaimModal'
@@ -139,7 +139,7 @@ const UNIAmount = styled(AccountElement)`
   height: 36px;
   font-weight: 500;
   background-color: ${({ theme }) => theme.bg3};
-  background: radial-gradient(174.47% 188.91% at 1.84% 0%, #ff007a 0%, #2172e5 100%), #edeef2;
+  background: radial-gradient(174.47% 188.91% at 1.84% 0%, #ed0b25 0%, #2172e5 100%), #edeef2;
 `
 
 const UNIWrapper = styled.span`
@@ -242,6 +242,19 @@ const StyledExternalLink = styled(ExternalLink).attrs({
     text-decoration: none;
   }
 `
+const rotate = keyframes`
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+`
+
+const UniToken = styled.img`
+  animation: ${rotate} 5s cubic-bezier(0.83, 0, 0.17, 1) infinite;
+`
 
 export default function Header() {
   const { account, chainId } = useActiveWeb3React()
@@ -270,7 +283,7 @@ export default function Header() {
       </Modal>
       <Title href=".">
         <UniIcon>
-          <Logo fill={darkMode ? white : black} width="24px" height="100%" title="logo" />
+          <UniToken width="48px" src={Logo} />
         </UniIcon>
       </Title>
       <HeaderLinks>

@@ -1,6 +1,6 @@
 {
   "name": "@uniswap/interface",
-  "description": "Uniswap Interface",
+  "description": "Casperswap Interface",
   "homepage": ".",
   "main": "dist/interface.js",
   "module": "dist/interface.esm.js",

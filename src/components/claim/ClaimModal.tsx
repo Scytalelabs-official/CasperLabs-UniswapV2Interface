@@ -7,7 +7,7 @@ import { Text } from 'rebass'
 import styled from 'styled-components/macro'
 
 import Circle from '../../assets/images/blue-loader.svg'
-import tokenLogo from '../../assets/images/token-logo.png'
+import tokenLogo from '../../assets/images/cspr.png'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useModalOpen, useToggleSelfClaimModal } from '../../state/application/hooks'
 import { ApplicationModal } from '../../state/application/reducer'
@@ -28,7 +28,7 @@ const ContentWrapper = styled(AutoColumn)`
 
 const ModalUpper = styled(DataCard)`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #ff007a 0%, #021d43 100%);
+  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #ed0b25 0%, #021d43 100%);
 `
 
 const ConfirmOrLoadingWrapper = styled.div<{ activeBG: boolean }>`
@@ -37,7 +37,7 @@ const ConfirmOrLoadingWrapper = styled.div<{ activeBG: boolean }>`
   position: relative;
   background: ${({ activeBG }) =>
     activeBG &&
-    'radial-gradient(76.02% 75.41% at 1.84% 0%, rgba(255, 0, 122, 0.2) 0%, rgba(33, 114, 229, 0.2) 100%), #FFFFFF;'};
+    'radial-gradient(76.02% 75.41% at 1.84% 0%, rgba(237, 11, 37, 0.2) 0%, rgba(33, 114, 229, 0.2) 100%), #FFFFFF;'};
 `
 
 const ConfirmedIcon = styled(ColumnCenter)`
@@ -151,7 +151,7 @@ export default function ClaimModal() {
           <AutoColumn gap="md" style={{ padding: '1rem', paddingTop: '0' }} justify="center">
             <TYPE.subHeader fontWeight={500}>
               <Trans>
-                As a member of the Uniswap community you may claim UNI to be used for voting and governance.
+                As a member of the Casperswap community you may claim UNI to be used for voting and governance.
                 <br />
                 <br />
                 <ExternalLink href="https://uniswap.org/blog/uni">Read more about UNI</ExternalLink>
@@ -191,7 +191,7 @@ export default function ClaimModal() {
                 {claimConfirmed ? <Trans>Claimed!</Trans> : <Trans>Claiming</Trans>}
               </TYPE.largeHeader>
               {!claimConfirmed && (
-                <Text fontSize={36} color={'#ff007a'} fontWeight={800}>
+                <Text fontSize={36} color={'#ed0b25'} fontWeight={800}>
                   <Trans>{unclaimedAmount?.toFixed(0, { groupSeparator: ',' } ?? '-')} UNI</Trans>
                 </Text>
               )}

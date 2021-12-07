@@ -142,8 +142,8 @@ msgid "Add"
 msgstr "Lisää"
 
 #: src/components/AccountDetails/TransactionSummary.tsx
-msgid "Add <0/> and <1/> to Uniswap V2"
-msgstr "Lisää <0/> ja <1/> Uniswap V2: een"
+msgid "Add <0/> and <1/> to Casperswap V2"
+msgstr "Lisää <0/> ja <1/> Casperswap V2: een"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Add Delegate +"
@@ -199,8 +199,8 @@ msgid "Allow high price impact trades and skip the confirm screen. Use at your o
 msgstr "Salli korkean hintavaikutuksen kaupat ja ohita vahvistusnäyttö. Käytä omalla vastuullasi."
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Uniswap Protocol to use your {0}"
-msgstr "Salli Uniswap-protokollan käyttää {0}"
+msgid "Allow the Casperswap Protocol to use your {0}"
+msgstr "Salli Casperswap-protokollan käyttää {0}"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "Allowed"
@@ -215,8 +215,8 @@ msgid "Amount"
 msgstr "Määrä"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "Tapahtui virhe yritettäessä suorittaa tämä vaihto. Saatat joutua lisäämään luistonsietokykyäsi. Jos se ei toimi, kaupankäynnin kohteena olevan tunnuksen kanssa saattaa olla ristiriita. Huomautus: siirto- ja uudelleentase-tunnusten maksu ei ole yhteensopiva Uniswap V3: n kanssa."
+msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note: fee on transfer and rebase tokens are incompatible with Casperswap V3."
+msgstr "Tapahtui virhe yritettäessä suorittaa tämä vaihto. Saatat joutua lisäämään luistonsietokykyäsi. Jos se ei toimi, kaupankäynnin kohteena olevan tunnuksen kanssa saattaa olla ristiriita. Huomautus: siirto- ja uudelleentase-tunnusten maksu ei ole yhteensopiva Casperswap V3: n kanssa."
 
 #: src/components/earn/StakingModal.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -268,8 +268,8 @@ msgid "Are you sure?"
 msgstr "Oletko varma?"
 
 #: src/components/claim/ClaimModal.tsx
-msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-msgstr "Uniswap-yhteisön jäsenenä voit lunastaa UNI-rahakkeita käytettäväksi äänestämiseen ja hallintoon.<0/><1/><2>Lue lisää UNIsta</2>"
+msgid "As a member of the Casperswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
+msgstr "Casperswap-yhteisön jäsenenä voit lunastaa UNI-rahakkeita käytettäväksi äänestämiseen ja hallintoon.<0/><1/><2>Lue lisää UNIsta</2>"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -328,8 +328,8 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "Lisäämällä tämän luettelon luotat ehdottomasti siihen, että tiedot ovat oikein. Kuka tahansa voi luoda luettelon ja luoda myös väärennettyjä versioita olemassa olevista luetteloista ja luetteloista, jotka väittävät edustavansa hankkeita, joilla ei sellaista ole."
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the Uniswap <1>Protocol Disclaimer</1>."
-msgstr "Yhdistämällä lompakon hyväksyt Uniswap Labsin <0>-palveluehdot</0> ja vahvistat lukeneesi ja ymmärtäväsi Uniswap <1>-protokollan vastuuvapauslausekkeen</1>."
+msgid "By connecting a wallet, you agree to Casperswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the Casperswap <1>Protocol Disclaimer</1>."
+msgstr "Yhdistämällä lompakon hyväksyt Casperswap Labsin <0>-palveluehdot</0> ja vahvistat lukeneesi ja ymmärtäväsi Casperswap <1>-protokollan vastuuvapauslausekkeen</1>."
 
 #: src/pages/Vote/styled.tsx
 msgid "Canceled"
@@ -629,8 +629,8 @@ msgid "Deposit liquidity"
 msgstr "Talleta likviditeettiä"
 
 #: src/pages/Earn/index.tsx
-msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
-msgstr "Talleta likviditeetin tarjoajan rahakkeesi saadaksesi UNI-rahakkeita, Uniswap-protokollan hallintorahakkeita."
+msgid "Deposit your Liquidity Provider tokens to receive UNI, the Casperswap protocol governance token."
+msgstr "Talleta likviditeetin tarjoajan rahakkeesi saadaksesi UNI-rahakkeita, Casperswap-protokollan hallintorahakkeita."
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
@@ -677,8 +677,8 @@ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 msgstr "Etkö näe yhtä v2-positiostasi? <0>Tuo se.</0>"
 
 #: src/components/vote/DelegateModal.tsx
-msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-msgstr "Ansaitut UNI-rahakkeet edustavat äänioikeusosakkeita Uniswapin hallinnossa."
+msgid "Earned UNI tokens represent voting shares in Casperswap governance."
+msgstr "Ansaitut UNI-rahakkeet edustavat äänioikeusosakkeita Casperswapin hallinnossa."
 
 #: src/components/FeeSelector/index.tsx
 msgid "Edit"
@@ -762,8 +762,8 @@ msgid "Expired"
 msgstr "Vanhentunut"
 
 #: src/pages/Pool/CTACards.tsx
-msgid "Explore popular pools on Uniswap Analytics."
-msgstr "Tutki suosittuja pooleja Uniswap Analyticsissä."
+msgid "Explore popular pools on Casperswap Analytics."
+msgstr "Tutki suosittuja pooleja Casperswap Analyticsissä."
 
 #: src/components/Header/NetworkSelector.tsx
 msgid "Explorer"
@@ -782,8 +782,8 @@ msgid "For"
 msgstr "Kohteelle"
 
 #: src/pages/MigrateV2/index.tsx
-msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
-msgstr "Kunkin alla olevan poolin kohdalla paina \"siirrä\" poistaaksesi likviditeettisi Uniswap V2:sta ja tallettaaksesi sen Uniswap V3:een."
+msgid "For each pool shown below, click migrate to remove your liquidity from Casperswap V2 and deposit it into Casperswap V3."
+msgstr "Kunkin alla olevan poolin kohdalla paina \"siirrä\" poistaaksesi likviditeettisi Casperswap V2:sta ja tallettaaksesi sen Casperswap V3:een."
 
 #: src/components/swap/SwapModalHeader.tsx
 #: src/pages/Swap/index.tsx
@@ -1057,8 +1057,8 @@ msgid "Migrate V2 Liquidity"
 msgstr "Siirrä V2-likviditeetti"
 
 #: src/pages/MigrateV2/index.tsx
-msgid "Migrate your liquidity tokens from Uniswap V2 to Uniswap V3."
-msgstr "Siirrä likviditeettirahakkeesi Uniswap V2:sta Uniswap V3:een."
+msgid "Migrate your liquidity tokens from Casperswap V2 to Casperswap V3."
+msgstr "Siirrä likviditeettirahakkeesi Casperswap V2:sta Casperswap V3:een."
 
 #: src/components/AccountDetails/TransactionSummary.tsx
 msgid "Migrate {0}/{1} liquidity to V3"
@@ -1346,8 +1346,8 @@ msgid "Read more about UNI"
 msgstr "Lue lisää UNIsta"
 
 #: src/pages/Vote/Landing.tsx
-msgid "Read more about Uniswap governance"
-msgstr "Lue lisää Uniswapin hallinnosta"
+msgid "Read more about Casperswap governance"
+msgstr "Lue lisää Casperswapin hallinnosta"
 
 #: src/pages/Pool/v2.tsx
 msgid "Read more about providing liquidity"
@@ -1562,16 +1562,16 @@ msgid "Swapping {0} {1} for {2} {3}"
 msgstr "Vaihdetaan {0} {1} kohteeseen {2} {3}"
 
 #: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the Uniswap community <0/>"
-msgstr "Kiitos, että olet osa Uniswap-yhteisöä <0/>"
+msgid "Thanks for being part of the Casperswap community <0/>"
+msgstr "Kiitos, että olet osa Casperswap-yhteisöä <0/>"
 
 #: src/components/FeeSelector/index.tsx
 msgid "The % you will earn in fees."
 msgstr "% Ansaitset palkkioita."
 
 #: src/hooks/useSwapCallback.tsx
-msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
-msgstr "Vaihto ei tyydyttänyt Uniswap-invarianttia x*y=k. Tämä tarkoittaa yleensä sitä, että yksi vaihtamistasi rahakkeista käyttäytyy mukautetusti siirron yhteydessä."
+msgid "The Casperswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
+msgstr "Vaihto ei tyydyttänyt Casperswap-invarianttia x*y=k. Tämä tarkoittaa yleensä sitä, että yksi vaihtamistasi rahakkeista käyttäytyy mukautetusti siirron yhteydessä."
 
 #: src/components/PrivacyPolicy/index.tsx
 msgid "The app fetches blockchain data from The Graph’s hosted service."
@@ -1582,8 +1582,8 @@ msgid "The app fetches on-chain data and constructs contract calls with an Infur
 msgstr "Sovellus hakee ketjun tietoja ja muodostaa sopimuskutsuja Infura API:lla."
 
 #: src/components/PrivacyPolicy/index.tsx
-msgid "The app fetches the optimal trade route from a Uniswap Labs server."
-msgstr "Sovellus hakee optimaalisen kauppareitin Uniswap Labs -palvelimelta."
+msgid "The app fetches the optimal trade route from a Casperswap Labs server."
+msgstr "Sovellus hakee optimaalisen kauppareitin Casperswap Labs -palvelimelta."
 
 #: src/components/PrivacyPolicy/index.tsx
 msgid "The app logs anonymized usage statistics in order to improve over time."
@@ -1606,8 +1606,8 @@ msgid "The output token cannot be transferred. There may be an issue with the ou
 msgstr "Tulosrahaketta ei voida siirtää. Tulosrahakkeessa voi olla ongelma."
 
 #: src/hooks/useSwapCallback.tsx
-msgid "The output token cannot be transferred. There may be an issue with the output token. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "Tulostunnusta ei voi siirtää. Tulostunnuksessa voi olla ongelma. Huomautus: siirto- ja uudelleentase-tunnusten maksu ei ole yhteensopiva Uniswap V3: n kanssa."
+msgid "The output token cannot be transferred. There may be an issue with the output token. Note: fee on transfer and rebase tokens are incompatible with Casperswap V3."
+msgstr "Tulostunnusta ei voi siirtää. Tulostunnuksessa voi olla ongelma. Huomautus: siirto- ja uudelleentase-tunnusten maksu ei ole yhteensopiva Casperswap V3: n kanssa."
 
 #: src/components/Badge/RangeBadge.tsx
 msgid "The price of this pool is outside of your selected range. Your position is not currently earning fees."
@@ -1650,16 +1650,16 @@ msgid "This token doesn't appear on the active token list(s). Make sure this is 
 msgstr "Tätä rahaketta ei näy aktiivisissa rahakeluetteloissa. Varmista, että tämä on rahake, jonka haluat vaihtaa."
 
 #: src/components/SearchModal/BlockedToken.tsx
-msgid "This token is not supported in the Uniswap Labs app"
-msgstr "Uniswap Labs -sovellus ei tue tätä tunnusta"
+msgid "This token is not supported in the Casperswap Labs app"
+msgstr "Casperswap Labs -sovellus ei tue tätä tunnusta"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "This tool will safely migrate your {0} liquidity to V3. The process is completely trustless thanks to the"
 msgstr "Tämä työkalu siirtää {0} likviditeettisi turvallisesti V3:lle. Prosessi on täysin luotettava kiitos"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "Tämä kauppa ei onnistu hintaliikkeen vuoksi. Yritä lisätä liukastumistoleranssia. Huomautus: siirto- ja uudelleentase-tunnusten maksu ei ole yhteensopiva Uniswap V3: n kanssa."
+msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Casperswap V3."
+msgstr "Tämä kauppa ei onnistu hintaliikkeen vuoksi. Yritä lisätä liukastumistoleranssia. Huomautus: siirto- ja uudelleentase-tunnusten maksu ei ole yhteensopiva Casperswap V3: n kanssa."
 
 #: src/hooks/useSwapCallback.tsx
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
@@ -1773,8 +1773,8 @@ msgid "UNI price:"
 msgstr "UNI:n hinta:"
 
 #: src/pages/Vote/Landing.tsx
-msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
-msgstr "UNI-rahakkeet edustavat Uniswapin hallinnon äänestysosakkeita. Voit äänestää jokaisesta ehdotuksesta itse tai delegoida äänesi kolmannelle osapuolelle."
+msgid "UNI tokens represent voting shares in Casperswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
+msgstr "UNI-rahakkeet edustavat Casperswapin hallinnon äänestysosakkeita. Voit äänestää jokaisesta ehdotuksesta itse tai delegoida äänesi kolmannelle osapuolelle."
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "UNI {0}/{1} Burned"
@@ -1814,31 +1814,31 @@ msgid "Unexpected issue with estimating the gas. Please try again."
 msgstr "Odottamaton ongelma kaasun arvioinnissa. Yritä uudelleen."
 
 #: src/pages/Vote/Landing.tsx
-msgid "Uniswap Governance"
-msgstr "Uniswapin hallinto"
+msgid "Casperswap Governance"
+msgstr "Casperswapin hallinto"
 
 #: src/components/PrivacyPolicy/index.tsx
-msgid "Uniswap Labs' Terms of Service"
-msgstr "Uniswap Labsin käyttöehdot"
+msgid "Casperswap Labs' Terms of Service"
+msgstr "Casperswap Labsin käyttöehdot"
 
 #: src/components/SwitchLocaleLink/index.tsx
-msgid "Uniswap available in: <0>{0}</0>"
-msgstr "Uniswap käytettävissä: <0>{0}</0>"
+msgid "Casperswap available in: <0>{0}</0>"
+msgstr "Casperswap käytettävissä: <0>{0}</0>"
 
 #: src/components/vote/ProposalEmptyState.tsx
-msgid "Uniswap governance is only available on Layer 1. Switch your network to Ethereum Mainnet to view Proposals and Vote."
-msgstr "Uniswap-hallinta on käytettävissä vain kerroksessa 1. Vaihda verkko Ethereum Mainnet -palveluun nähdäksesi ehdotuksia ja äänestystä."
+msgid "Casperswap governance is only available on Layer 1. Switch your network to Ethereum Mainnet to view Proposals and Vote."
+msgstr "Casperswap-hallinta on käytettävissä vain kerroksessa 1. Vaihda verkko Ethereum Mainnet -palveluun nähdäksesi ehdotuksia ja äänestystä."
 
 #: src/pages/Earn/index.tsx
-msgid "Uniswap liquidity mining"
-msgstr "Uniswapin likviditeetin louhinta"
+msgid "Casperswap liquidity mining"
+msgstr "Casperswapin likviditeetin louhinta"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Uniswap migration contract↗"
-msgstr "Uniswapin siirtosopimus ↗"
+msgid "Casperswap migration contract↗"
+msgstr "Casperswapin siirtosopimus ↗"
 
 #: src/components/NetworkAlert/NetworkAlert.tsx
-msgid "Uniswap on {0}"
+msgid "Casperswap on {0}"
 msgstr "Peruuta {0}"
 
 #: src/components/SearchModal/TokenImportCard.tsx
@@ -1846,8 +1846,8 @@ msgid "Unknown Source"
 msgstr "Tuntematon lähde"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "Unknown error{0}. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "Tuntematon virhe{0}. Yritä lisätä liukastumissietokykyäsi. Huomaa: siirto- ja uudelleenkorotusmaksut eivät ole yhteensopivia Uniswap V3: n kanssa."
+msgid "Unknown error{0}. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Casperswap V3."
+msgstr "Tuntematon virhe{0}. Yritä lisätä liukastumissietokykyäsi. Huomaa: siirto- ja uudelleenkorotusmaksut eivät ole yhteensopivia Casperswap V3: n kanssa."
 
 #: src/pages/Vote/Landing.tsx
 #: src/pages/Vote/VotePage.tsx
@@ -1893,8 +1893,8 @@ msgid "Update list"
 msgstr "Päivitä luettelo"
 
 #: src/components/Settings/index.tsx
-msgid "Use the Uniswap Labs API to get better pricing through a more efficient route."
-msgstr "Käytä Uniswap Labs -sovellusliittymää saadaksesi paremman hinnan tehokkaamman reitin kautta."
+msgid "Use the Casperswap Labs API to get better pricing through a more efficient route."
+msgstr "Käytä Casperswap Labs -sovellusliittymää saadaksesi paremman hinnan tehokkaamman reitin kautta."
 
 #: src/components/claim/ClaimModal.tsx
 msgid "User"
@@ -2089,8 +2089,8 @@ msgid "You are creating a pool"
 msgstr "Olet luomassa poolia"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
-msgstr "Olet tämän Uniswap V3 -poolin ensimmäinen likviditeetin tarjoaja. Likviditeettisi siirtyy nykyiseen {0} hintaan."
+msgid "You are the first liquidity provider for this Casperswap V3 pool. Your liquidity will migrate at the current {0} price."
+msgstr "Olet tämän Casperswap V3 -poolin ensimmäinen likviditeetin tarjoaja. Likviditeettisi siirtyy nykyiseen {0} hintaan."
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "You are the first liquidity provider."
@@ -2125,16 +2125,16 @@ msgid "You must connect an account."
 msgstr "Sinun on yhdistettävä tili."
 
 #: src/pages/Swap/index.tsx
-msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-msgstr "Sinun täytyy antaa Uniswapin älykkäille sopimuksille lupa käyttää {0}. Sinun täytyy tehdä tämä vain kerran per rahake."
+msgid "You must give the Casperswap smart contracts permission to use your {0}. You only have to do this once per token."
+msgstr "Sinun täytyy antaa Casperswapin älykkäille sopimuksille lupa käyttää {0}. Sinun täytyy tehdä tämä vain kerran per rahake."
 
 #: src/pages/CreateProposal/index.tsx
 msgid "You must have {formattedProposalThreshold} votes to submit a proposal"
 msgstr "Sinulla on oltava {formattedProposalThreshold} ääntä voidaksesi lähettää ehdotuksen"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
-msgstr "Sinun tulisi tallettaa likviditeettiä Uniswap V3:een ainoastaan hintaan, jonka uskot olevan oikein. <0/>Jos hinta vaikuttaa virheelliseltä, voit joko vaihtaa hintaa tai odottaa jonkun muun tekevän niin."
+msgid "You should only deposit liquidity into Casperswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
+msgstr "Sinun tulisi tallettaa likviditeettiä Casperswap V3:een ainoastaan hintaan, jonka uskot olevan oikein. <0/>Jos hinta vaikuttaa virheelliseltä, voit joko vaihtaa hintaa tai odottaa jonkun muun tekevän niin."
 
 #: src/pages/RemoveLiquidity/V3.tsx
 msgid "You will also collect fees earned from this position."
