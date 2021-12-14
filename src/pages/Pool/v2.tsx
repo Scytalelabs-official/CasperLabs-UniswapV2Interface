@@ -84,7 +84,8 @@ const Layer2Prompt = styled(EmptyProposals)`
 
 export default function Pool() {
   const theme = useContext(ThemeContext)
-  const { account, chainId } = useActiveWeb3React()
+  const { chainId } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
 
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
@@ -97,7 +98,7 @@ export default function Pool() {
     [tokenPairsWithLiquidityTokens]
   )
   const [v2PairsBalances, fetchingV2PairBalances] = useTokenBalancesWithLoadingIndicator(
-    account ?? undefined,
+    account === null || account === 'null' ? undefined : undefined,
     liquidityTokens
   )
 
@@ -207,7 +208,7 @@ export default function Pool() {
                 </ButtonRow>
               </TitleRow>
 
-              {!account ? (
+              {account === null || account === 'null' || account === undefined ? (
                 <Card padding="40px">
                   <TYPE.body color={theme.text3} textAlign="center">
                     <Trans>Connect to a wallet to view your liquidity.</Trans>

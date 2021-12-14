@@ -257,7 +257,8 @@ const UniToken = styled.img`
 `
 
 export default function Header() {
-  const { account, chainId } = useActiveWeb3React()
+  const { chainId } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
   const [darkMode] = useDarkModeManager()

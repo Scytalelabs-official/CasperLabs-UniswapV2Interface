@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Describe an issue in the Casperswap Interface
+about: Describe an issue in the Casper Swap Interface
 title: ''
 labels: bug
 assignees: ''

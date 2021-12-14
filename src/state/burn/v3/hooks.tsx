@@ -4,7 +4,7 @@ import { Position } from '@uniswap/v3-sdk'
 import { useToken } from 'hooks/Tokens'
 import { usePool } from 'hooks/usePools'
 import { useV3PositionFees } from 'hooks/useV3PositionFees'
-import { useActiveWeb3React } from 'hooks/web3'
+// import { useActiveWeb3React } from 'hooks/web3'
 import { ReactNode, useCallback, useMemo } from 'react'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
 import { PositionDetails } from 'types/position'
@@ -30,7 +30,8 @@ export function useDerivedV3BurnInfo(
   outOfRange: boolean
   error?: ReactNode
 } {
-  const { account } = useActiveWeb3React()
+  // const { account } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
   const { percent } = useBurnV3State()
 
   const token0 = useToken(position?.token0)
@@ -75,7 +76,7 @@ export function useDerivedV3BurnInfo(
     pool && position ? pool.tickCurrent < position.tickLower || pool.tickCurrent > position.tickUpper : false
 
   let error: ReactNode | undefined
-  if (!account) {
+  if (account === null || account === 'null' || account === undefined) {
     error = <Trans>Connect Wallet</Trans>
   }
   if (percent === 0) {

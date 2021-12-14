@@ -1,12 +1,12 @@
-import { BigNumber } from '@ethersproject/bignumber'
-import { TransactionResponse } from '@ethersproject/providers'
+// import { BigNumber } from '@ethersproject/bignumber'
+// import { TransactionResponse } from '@ethersproject/providers'
 import { Trans } from '@lingui/macro'
 import { Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
 import { SwitchLocaleLink } from 'components/SwitchLocaleLink'
 import { useCallback, useContext, useState } from 'react'
 import { Plus } from 'react-feather'
-import ReactGA from 'react-ga'
+// import ReactGA from 'react-ga'
 import { RouteComponentProps } from 'react-router-dom'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components/macro'
@@ -20,7 +20,7 @@ import { AddRemoveTabs } from '../../components/NavigationTabs'
 import { MinimalPositionCard } from '../../components/PositionCard'
 import Row, { RowBetween, RowFlat } from '../../components/Row'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../components/TransactionConfirmationModal'
-import { ZERO_PERCENT } from '../../constants/misc'
+// import { ZERO_PERCENT } from '../../constants/misc'
 import { WETH9_EXTENDED } from '../../constants/tokens'
 import { useCurrency } from '../../hooks/Tokens'
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
@@ -32,12 +32,12 @@ import { useActiveWeb3React } from '../../hooks/web3'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { Field } from '../../state/mint/actions'
 import { useDerivedMintInfo, useMintActionHandlers, useMintState } from '../../state/mint/hooks'
-import { TransactionType } from '../../state/transactions/actions'
+// import { TransactionType } from '../../state/transactions/actions'
 import { useTransactionAdder } from '../../state/transactions/hooks'
 import { useIsExpertMode, useUserSlippageToleranceWithDefault } from '../../state/user/hooks'
 import { TYPE } from '../../theme'
-import { calculateGasMargin } from '../../utils/calculateGasMargin'
-import { calculateSlippageAmount } from '../../utils/calculateSlippageAmount'
+// import { calculateGasMargin } from '../../utils/calculateGasMargin'
+// import { calculateSlippageAmount } from '../../utils/calculateSlippageAmount'
 import { currencyId } from '../../utils/currencyId'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import AppBody from '../AppBody'
@@ -53,7 +53,8 @@ export default function AddLiquidity({
   },
   history,
 }: RouteComponentProps<{ currencyIdA?: string; currencyIdB?: string }>) {
-  const { account, chainId, library } = useActiveWeb3React()
+  const { chainId, library } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
   const theme = useContext(ThemeContext)
 
   const currencyA = useCurrency(currencyIdA)
@@ -134,84 +135,84 @@ export default function AddLiquidity({
   const addTransaction = useTransactionAdder()
 
   async function onAdd() {
-    if (!chainId || !library || !account || !router) return
+    if (!chainId || !library || account === null || account === 'null' || account === undefined || !router) return
 
     const { [Field.CURRENCY_A]: parsedAmountA, [Field.CURRENCY_B]: parsedAmountB } = parsedAmounts
     if (!parsedAmountA || !parsedAmountB || !currencyA || !currencyB || !deadline) {
       return
     }
+    return
+    // const amountsMin = {
+    //   [Field.CURRENCY_A]: calculateSlippageAmount(parsedAmountA, noLiquidity ? ZERO_PERCENT : allowedSlippage)[0],
+    //   [Field.CURRENCY_B]: calculateSlippageAmount(parsedAmountB, noLiquidity ? ZERO_PERCENT : allowedSlippage)[0],
+    // }
 
-    const amountsMin = {
-      [Field.CURRENCY_A]: calculateSlippageAmount(parsedAmountA, noLiquidity ? ZERO_PERCENT : allowedSlippage)[0],
-      [Field.CURRENCY_B]: calculateSlippageAmount(parsedAmountB, noLiquidity ? ZERO_PERCENT : allowedSlippage)[0],
-    }
+    // let estimate,
+    //   method: (...args: any) => Promise<TransactionResponse>,
+    //   args: Array<string | string[] | number>,
+    //   value: BigNumber | null
+    // if (currencyA.isNative || currencyB.isNative) {
+    //   const tokenBIsETH = currencyB.isNative
+    //   estimate = router.estimateGas.addLiquidityETH
+    //   method = router.addLiquidityETH
+    //   args = [
+    //     (tokenBIsETH ? currencyA : currencyB)?.wrapped?.address ?? '', // token
+    //     (tokenBIsETH ? parsedAmountA : parsedAmountB).quotient.toString(), // token desired
+    //     amountsMin[tokenBIsETH ? Field.CURRENCY_A : Field.CURRENCY_B].toString(), // token min
+    //     amountsMin[tokenBIsETH ? Field.CURRENCY_B : Field.CURRENCY_A].toString(), // eth min
+    //     account,
+    //     deadline.toHexString(),
+    //   ]
+    //   value = BigNumber.from((tokenBIsETH ? parsedAmountB : parsedAmountA).quotient.toString())
+    // } else {
+    //   estimate = router.estimateGas.addLiquidity
+    //   method = router.addLiquidity
+    //   args = [
+    //     currencyA?.wrapped?.address ?? '',
+    //     currencyB?.wrapped?.address ?? '',
+    //     parsedAmountA.quotient.toString(),
+    //     parsedAmountB.quotient.toString(),
+    //     amountsMin[Field.CURRENCY_A].toString(),
+    //     amountsMin[Field.CURRENCY_B].toString(),
+    //     account,
+    //     deadline.toHexString(),
+    //   ]
+    //   value = null
+    // }
 
-    let estimate,
-      method: (...args: any) => Promise<TransactionResponse>,
-      args: Array<string | string[] | number>,
-      value: BigNumber | null
-    if (currencyA.isNative || currencyB.isNative) {
-      const tokenBIsETH = currencyB.isNative
-      estimate = router.estimateGas.addLiquidityETH
-      method = router.addLiquidityETH
-      args = [
-        (tokenBIsETH ? currencyA : currencyB)?.wrapped?.address ?? '', // token
-        (tokenBIsETH ? parsedAmountA : parsedAmountB).quotient.toString(), // token desired
-        amountsMin[tokenBIsETH ? Field.CURRENCY_A : Field.CURRENCY_B].toString(), // token min
-        amountsMin[tokenBIsETH ? Field.CURRENCY_B : Field.CURRENCY_A].toString(), // eth min
-        account,
-        deadline.toHexString(),
-      ]
-      value = BigNumber.from((tokenBIsETH ? parsedAmountB : parsedAmountA).quotient.toString())
-    } else {
-      estimate = router.estimateGas.addLiquidity
-      method = router.addLiquidity
-      args = [
-        currencyA?.wrapped?.address ?? '',
-        currencyB?.wrapped?.address ?? '',
-        parsedAmountA.quotient.toString(),
-        parsedAmountB.quotient.toString(),
-        amountsMin[Field.CURRENCY_A].toString(),
-        amountsMin[Field.CURRENCY_B].toString(),
-        account,
-        deadline.toHexString(),
-      ]
-      value = null
-    }
+    // setAttemptingTxn(true)
+    // await estimate(...args, value ? { value } : {})
+    //   .then((estimatedGasLimit) =>
+    //     method(...args, {
+    //       ...(value ? { value } : {}),
+    //       gasLimit: calculateGasMargin(estimatedGasLimit),
+    //     }).then((response) => {
+    //       setAttemptingTxn(false)
 
-    setAttemptingTxn(true)
-    await estimate(...args, value ? { value } : {})
-      .then((estimatedGasLimit) =>
-        method(...args, {
-          ...(value ? { value } : {}),
-          gasLimit: calculateGasMargin(estimatedGasLimit),
-        }).then((response) => {
-          setAttemptingTxn(false)
+    //       addTransaction(response, {
+    //         type: TransactionType.ADD_LIQUIDITY_V2_POOL,
+    //         baseCurrencyId: currencyId(currencyA),
+    //         expectedAmountBaseRaw: parsedAmounts[Field.CURRENCY_A]?.quotient.toString() ?? '0',
+    //         quoteCurrencyId: currencyId(currencyB),
+    //         expectedAmountQuoteRaw: parsedAmounts[Field.CURRENCY_B]?.quotient.toString() ?? '0',
+    //       })
 
-          addTransaction(response, {
-            type: TransactionType.ADD_LIQUIDITY_V2_POOL,
-            baseCurrencyId: currencyId(currencyA),
-            expectedAmountBaseRaw: parsedAmounts[Field.CURRENCY_A]?.quotient.toString() ?? '0',
-            quoteCurrencyId: currencyId(currencyB),
-            expectedAmountQuoteRaw: parsedAmounts[Field.CURRENCY_B]?.quotient.toString() ?? '0',
-          })
+    //       setTxHash(response.hash)
 
-          setTxHash(response.hash)
-
-          ReactGA.event({
-            category: 'Liquidity',
-            action: 'Add',
-            label: [currencies[Field.CURRENCY_A]?.symbol, currencies[Field.CURRENCY_B]?.symbol].join('/'),
-          })
-        })
-      )
-      .catch((error) => {
-        setAttemptingTxn(false)
-        // we only care if the error is something _other_ than the user rejected the tx
-        if (error?.code !== 4001) {
-          console.error(error)
-        }
-      })
+    //       ReactGA.event({
+    //         category: 'Liquidity',
+    //         action: 'Add',
+    //         label: [currencies[Field.CURRENCY_A]?.symbol, currencies[Field.CURRENCY_B]?.symbol].join('/'),
+    //       })
+    //     })
+    //   )
+    //   .catch((error) => {
+    //     setAttemptingTxn(false)
+    //     // we only care if the error is something _other_ than the user rejected the tx
+    //     if (error?.code !== 4001) {
+    //       console.error(error)
+    //     }
+    //   })
   }
 
   const modalHeader = () => {
@@ -431,7 +432,7 @@ export default function AddLiquidity({
                   <Trans>Unsupported Asset</Trans>
                 </TYPE.main>
               </ButtonPrimary>
-            ) : !account ? (
+            ) : account === null || account === 'null' || account === undefined ? (
               <ButtonLight onClick={toggleWalletModal}>
                 <Trans>Connect Wallet</Trans>
               </ButtonLight>

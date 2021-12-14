@@ -52,7 +52,7 @@ export function getExplorerLink(chainId: number, data: string, type: ExplorerDat
     }
   }
 
-  const prefix = `https://${ETHERSCAN_PREFIXES[chainId] ?? ''}etherscan.io`
+  const prefix = `https://${ETHERSCAN_PREFIXES[chainId] ?? ''}testnet.cspr.live`
 
   switch (type) {
     case ExplorerDataType.TRANSACTION:
@@ -68,7 +68,7 @@ export function getExplorerLink(chainId: number, data: string, type: ExplorerDat
       return `${prefix}/block/${data}`
 
     case ExplorerDataType.ADDRESS:
-      return `${prefix}/address/${data}`
+      return `${prefix}/account/${data}`
     default:
       return `${prefix}`
   }

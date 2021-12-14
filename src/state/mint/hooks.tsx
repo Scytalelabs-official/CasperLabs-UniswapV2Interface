@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from 'state/hooks'
 
 import { useTotalSupply } from '../../hooks/useTotalSupply'
 import { PairState, useV2Pair } from '../../hooks/useV2Pairs'
-import { useActiveWeb3React } from '../../hooks/web3'
+// import { useActiveWeb3React } from '../../hooks/web3'
 import { AppState } from '../index'
 import { tryParseAmount } from '../swap/hooks'
 import { useCurrencyBalances } from '../wallet/hooks'
@@ -61,7 +61,8 @@ export function useDerivedMintInfo(
   poolTokenPercentage?: Percent
   error?: ReactNode
 } {
-  const { account } = useActiveWeb3React()
+  // const { account } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
 
   const { independentField, typedValue, otherTypedValue } = useMintState()
 
@@ -91,7 +92,7 @@ export function useDerivedMintInfo(
     )
 
   // balances
-  const balances = useCurrencyBalances(account ?? undefined, [
+  const balances = useCurrencyBalances(account === null || account === 'null' ? undefined : undefined, [
     currencies[Field.CURRENCY_A],
     currencies[Field.CURRENCY_B],
   ])
@@ -177,7 +178,7 @@ export function useDerivedMintInfo(
   }, [liquidityMinted, totalSupply])
 
   let error: ReactNode | undefined
-  if (!account) {
+  if (account === null || account === 'null' || account === undefined) {
     error = <Trans>Connect Wallet</Trans>
   }
 

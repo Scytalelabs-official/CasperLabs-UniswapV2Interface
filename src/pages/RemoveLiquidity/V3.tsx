@@ -1,8 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { TransactionResponse } from '@ethersproject/providers'
+// import { TransactionResponse } from '@ethersproject/providers'
 import { Trans } from '@lingui/macro'
 import { Percent } from '@uniswap/sdk-core'
-import { NonfungiblePositionManager } from '@uniswap/v3-sdk'
+// import { NonfungiblePositionManager } from '@uniswap/v3-sdk'
 import RangeBadge from 'components/Badge/RangeBadge'
 import { ButtonConfirmed, ButtonPrimary } from 'components/Button'
 import { LightCard } from 'components/Card'
@@ -23,7 +23,7 @@ import useTransactionDeadline from 'hooks/useTransactionDeadline'
 import { useV3PositionFromTokenId } from 'hooks/useV3Positions'
 import { useActiveWeb3React } from 'hooks/web3'
 import { useCallback, useMemo, useState } from 'react'
-import ReactGA from 'react-ga'
+// import ReactGA from 'react-ga'
 import { Redirect, RouteComponentProps } from 'react-router-dom'
 import { Text } from 'rebass'
 import { useBurnV3ActionHandlers, useBurnV3State, useDerivedV3BurnInfo } from 'state/burn/v3/hooks'
@@ -33,9 +33,9 @@ import { TYPE } from 'theme'
 
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../components/TransactionConfirmationModal'
 import { WETH9_EXTENDED } from '../../constants/tokens'
-import { TransactionType } from '../../state/transactions/actions'
-import { calculateGasMargin } from '../../utils/calculateGasMargin'
-import { currencyId } from '../../utils/currencyId'
+// import { TransactionType } from '../../state/transactions/actions'
+// import { calculateGasMargin } from '../../utils/calculateGasMargin'
+// import { currencyId } from '../../utils/currencyId'
 import AppBody from '../AppBody'
 import { ResponsiveHeaderText, SmallMaxButton, Wrapper } from './styled'
 
@@ -65,7 +65,8 @@ export default function RemoveLiquidityV3({
 function Remove({ tokenId }: { tokenId: BigNumber }) {
   const { position } = useV3PositionFromTokenId(tokenId)
   const theme = useTheme()
-  const { account, chainId, library } = useActiveWeb3React()
+  const { chainId, library } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
 
   // flag for receiving WETH
   const [receiveWETH, setReceiveWETH] = useState(false)
@@ -104,7 +105,9 @@ function Remove({ tokenId }: { tokenId: BigNumber }) {
       !liquidityValue0 ||
       !liquidityValue1 ||
       !deadline ||
-      !account ||
+      account === null ||
+      account === 'null' ||
+      account === undefined ||
       !chainId ||
       !feeValue0 ||
       !feeValue1 ||
@@ -115,57 +118,57 @@ function Remove({ tokenId }: { tokenId: BigNumber }) {
       return
     }
 
-    const { calldata, value } = NonfungiblePositionManager.removeCallParameters(positionSDK, {
-      tokenId: tokenId.toString(),
-      liquidityPercentage,
-      slippageTolerance: allowedSlippage,
-      deadline: deadline.toString(),
-      collectOptions: {
-        expectedCurrencyOwed0: feeValue0,
-        expectedCurrencyOwed1: feeValue1,
-        recipient: account,
-      },
-    })
+    // const { calldata, value } = NonfungiblePositionManager.removeCallParameters(positionSDK, {
+    //   tokenId: tokenId.toString(),
+    //   liquidityPercentage,
+    //   slippageTolerance: allowedSlippage,
+    //   deadline: deadline.toString(),
+    //   collectOptions: {
+    //     expectedCurrencyOwed0: feeValue0,
+    //     expectedCurrencyOwed1: feeValue1,
+    //     recipient: account,
+    //   },
+    // })
 
-    const txn = {
-      to: positionManager.address,
-      data: calldata,
-      value,
-    }
+    // const txn = {
+    //   to: positionManager.address,
+    //   data: calldata,
+    //   value,
+    // }
 
-    library
-      .getSigner()
-      .estimateGas(txn)
-      .then((estimate) => {
-        const newTxn = {
-          ...txn,
-          gasLimit: calculateGasMargin(estimate),
-        }
+    // library
+    //   .getSigner()
+    //   .estimateGas(txn)
+    //   .then((estimate) => {
+    //     const newTxn = {
+    //       ...txn,
+    //       gasLimit: calculateGasMargin(estimate),
+    //     }
 
-        return library
-          .getSigner()
-          .sendTransaction(newTxn)
-          .then((response: TransactionResponse) => {
-            ReactGA.event({
-              category: 'Liquidity',
-              action: 'RemoveV3',
-              label: [liquidityValue0.currency.symbol, liquidityValue1.currency.symbol].join('/'),
-            })
-            setTxnHash(response.hash)
-            setAttemptingTxn(false)
-            addTransaction(response, {
-              type: TransactionType.REMOVE_LIQUIDITY_V3,
-              baseCurrencyId: currencyId(liquidityValue0.currency),
-              quoteCurrencyId: currencyId(liquidityValue1.currency),
-              expectedAmountBaseRaw: liquidityValue0.quotient.toString(),
-              expectedAmountQuoteRaw: liquidityValue1.quotient.toString(),
-            })
-          })
-      })
-      .catch((error) => {
-        setAttemptingTxn(false)
-        console.error(error)
-      })
+    //     return library
+    //       .getSigner()
+    //       .sendTransaction(newTxn)
+    //       .then((response: TransactionResponse) => {
+    //         ReactGA.event({
+    //           category: 'Liquidity',
+    //           action: 'RemoveV3',
+    //           label: [liquidityValue0.currency.symbol, liquidityValue1.currency.symbol].join('/'),
+    //         })
+    //         setTxnHash(response.hash)
+    //         setAttemptingTxn(false)
+    //         addTransaction(response, {
+    //           type: TransactionType.REMOVE_LIQUIDITY_V3,
+    //           baseCurrencyId: currencyId(liquidityValue0.currency),
+    //           quoteCurrencyId: currencyId(liquidityValue1.currency),
+    //           expectedAmountBaseRaw: liquidityValue0.quotient.toString(),
+    //           expectedAmountQuoteRaw: liquidityValue1.quotient.toString(),
+    //         })
+    //       })
+    //   })
+    //   .catch((error) => {
+    //     setAttemptingTxn(false)
+    //     console.error(error)
+    //   })
   }, [
     positionManager,
     liquidityValue0,

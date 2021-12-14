@@ -155,7 +155,7 @@ function Web3StatusInner() {
   const toggleWalletModal = useWalletModalToggle()
   console.log('ISNULL', account !== null)
 
-  if (account !== null) {
+  if (account !== null && account !== 'null' && account !== undefined) {
     return (
       <Web3StatusConnected id="web3-status-connected" onClick={toggleWalletModal} pending={hasPendingTransactions}>
         {hasPendingTransactions ? (
@@ -183,9 +183,9 @@ function Web3StatusInner() {
     )
   } else {
     return (
-      <Web3StatusConnect id="connect-wallet" onClick={toggleWalletModal} faded={account !== 'null'}>
+      <Web3StatusConnect id="connect-wallet" onClick={toggleWalletModal} faded={account !== 'null' && account !== null}>
         <Text>
-          <Trans>Connect Wallet</Trans>
+          <Trans>Connect Wallete</Trans>
         </Text>
       </Web3StatusConnect>
     )

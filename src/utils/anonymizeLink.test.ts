@@ -4,11 +4,11 @@ describe('#anonymizeLink', () => {
   it('does nothing to non-urls', () => {
     expect(anonymizeLink('not a link')).toEqual('not a link')
   })
-  it('anonymizes any addresses in etherscan urls', () => {
-    expect(anonymizeLink('https://etherscan.io/address/0xabcd')).toEqual('https://etherscan.io/address/***')
+  it('anonymizes any addresses in cspr.live urls', () => {
+    expect(anonymizeLink('https://testnet.cspr.live/account/0xabcd')).toEqual('https://testnet.cspr.live/account/***')
   })
-  it('anonymizes any addresses in etherscan urls', () => {
-    expect(anonymizeLink('https://etherscan.io/address/0xabcd')).toEqual('https://etherscan.io/address/***')
+  it('anonymizes any addresses in cspr.live urls', () => {
+    expect(anonymizeLink('https://testnet.cspr.live/account/0xabcd')).toEqual('https://testnet.cspr.live/account/***')
   })
   it('anonymizes any addresses in testnet etherscan urls', () => {
     expect(anonymizeLink('https://rinkeby.etherscan.io/address/0xabcd')).toEqual(

@@ -19,7 +19,7 @@ import { getTickToPrice } from 'utils/getTickToPrice'
 
 import { BIG_INT_ZERO } from '../../../constants/misc'
 import { PoolState } from '../../../hooks/usePools'
-import { useActiveWeb3React } from '../../../hooks/web3'
+// import { useActiveWeb3React } from '../../../hooks/web3'
 import { AppState } from '../../index'
 import { tryParseAmount } from '../../swap/hooks'
 import { useCurrencyBalances } from '../../wallet/hooks'
@@ -121,7 +121,8 @@ export function useV3DerivedMintInfo(
   invertPrice: boolean
   ticksAtLimit: { [bound in Bound]?: boolean | undefined }
 } {
-  const { account } = useActiveWeb3React()
+  // const { account } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
 
   const { independentField, typedValue, leftRangeTypedValue, rightRangeTypedValue, startPriceTypedValue } =
     useV3MintState()
@@ -150,7 +151,7 @@ export function useV3DerivedMintInfo(
   )
 
   // balances
-  const balances = useCurrencyBalances(account ?? undefined, [
+  const balances = useCurrencyBalances(account === null || account === 'null' ? undefined : undefined, [
     currencies[Field.CURRENCY_A],
     currencies[Field.CURRENCY_B],
   ])
@@ -424,7 +425,7 @@ export function useV3DerivedMintInfo(
   ])
 
   let errorMessage: ReactNode | undefined
-  if (!account) {
+  if (account === null || account === 'null' || account === undefined) {
     errorMessage = <Trans>Connect Wallet</Trans>
   }
 

@@ -39,7 +39,8 @@ function useQuery() {
 export default function PoolFinder() {
   const query = useQuery()
 
-  const { account, chainId } = useActiveWeb3React()
+  const { chainId } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
 
   const [showSearch, setShowSearch] = useState<boolean>(false)
   const [activeField, setActiveField] = useState<number>(Fields.TOKEN1)
@@ -64,7 +65,10 @@ export default function PoolFinder() {
         JSBI.equal(pair.reserve1.quotient, JSBI.BigInt(0))
     )
 
-  const position: CurrencyAmount<Token> | undefined = useTokenBalance(account ?? undefined, pair?.liquidityToken)
+  const position: CurrencyAmount<Token> | undefined = useTokenBalance(
+    account === null || account === 'null' ? undefined : undefined,
+    pair?.liquidityToken
+  )
   const hasPosition = Boolean(position && JSBI.greaterThan(position.quotient, JSBI.BigInt(0)))
 
   const handleCurrencySelect = useCallback(
@@ -85,7 +89,7 @@ export default function PoolFinder() {
   const prerequisiteMessage = (
     <LightCard padding="45px 10px">
       <Text textAlign="center">
-        {!account ? (
+        {account !== null && account !== 'null' && account !== undefined ? (
           <Trans>Connect to a wallet to find pools</Trans>
         ) : (
           <Trans>Select a token to find your v2 liquidity.</Trans>

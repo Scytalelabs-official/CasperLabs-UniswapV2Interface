@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from 'state/hooks'
 
 import { useTotalSupply } from '../../hooks/useTotalSupply'
 import { useV2Pair } from '../../hooks/useV2Pairs'
-import { useActiveWeb3React } from '../../hooks/web3'
+// import { useActiveWeb3React } from '../../hooks/web3'
 import { AppState } from '../index'
 import { tryParseAmount } from '../swap/hooks'
 import { useTokenBalances } from '../wallet/hooks'
@@ -30,7 +30,8 @@ export function useDerivedBurnInfo(
   }
   error?: ReactNode
 } {
-  const { account } = useActiveWeb3React()
+  // const { account } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
 
   const { independentField, typedValue } = useBurnState()
 
@@ -38,7 +39,9 @@ export function useDerivedBurnInfo(
   const [, pair] = useV2Pair(currencyA, currencyB)
 
   // balances
-  const relevantTokenBalances = useTokenBalances(account ?? undefined, [pair?.liquidityToken])
+  const relevantTokenBalances = useTokenBalances(account === null || account === 'null' ? undefined : undefined, [
+    pair?.liquidityToken,
+  ])
   const userLiquidity: undefined | CurrencyAmount<Token> = relevantTokenBalances?.[pair?.liquidityToken?.address ?? '']
 
   const [tokenA, tokenB] = [currencyA?.wrapped, currencyB?.wrapped]
@@ -123,7 +126,7 @@ export function useDerivedBurnInfo(
   }
 
   let error: ReactNode | undefined
-  if (!account) {
+  if (account === null || account === 'null' || account === undefined) {
     error = <Trans>Connect Wallet</Trans>
   }
 

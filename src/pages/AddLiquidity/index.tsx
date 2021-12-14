@@ -1,13 +1,13 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { TransactionResponse } from '@ethersproject/providers'
+// import { TransactionResponse } from '@ethersproject/providers'
 import { Trans } from '@lingui/macro'
 import { Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
-import { FeeAmount, NonfungiblePositionManager } from '@uniswap/v3-sdk'
+import { FeeAmount } from '@uniswap/v3-sdk'
 import DowntimeWarning from 'components/DowntimeWarning'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { AlertTriangle } from 'react-feather'
-import ReactGA from 'react-ga'
+// import ReactGA from 'react-ga'
 import { RouteComponentProps } from 'react-router-dom'
 import { Text } from 'rebass'
 import {
@@ -48,12 +48,12 @@ import { useV3PositionFromTokenId } from '../../hooks/useV3Positions'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { Bound, Field } from '../../state/mint/v3/actions'
-import { TransactionType } from '../../state/transactions/actions'
+// import { TransactionType } from '../../state/transactions/actions'
 import { useTransactionAdder } from '../../state/transactions/hooks'
 import { useIsExpertMode, useUserSlippageToleranceWithDefault } from '../../state/user/hooks'
 import { ExternalLink, TYPE } from '../../theme'
-import approveAmountCalldata from '../../utils/approveAmountCalldata'
-import { calculateGasMargin } from '../../utils/calculateGasMargin'
+// import approveAmountCalldata from '../../utils/approveAmountCalldata'
+// import { calculateGasMargin } from '../../utils/calculateGasMargin'
 import { currencyId } from '../../utils/currencyId'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { Dots } from '../Pool/styleds'
@@ -81,7 +81,8 @@ export default function AddLiquidity({
   },
   history,
 }: RouteComponentProps<{ currencyIdA?: string; currencyIdB?: string; feeAmount?: string; tokenId?: string }>) {
-  const { account, chainId, library } = useActiveWeb3React()
+  const { chainId, library } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
   const theme = useContext(ThemeContext)
   const toggleWalletModal = useWalletModalToggle() // toggle wallet when disconnected
   const expertMode = useIsExpertMode()
@@ -205,104 +206,104 @@ export default function AddLiquidity({
   )
 
   async function onAdd() {
-    if (!chainId || !library || !account) return
+    if (!chainId || !library || account === null || account === 'null' || account === undefined) return
 
     if (!positionManager || !baseCurrency || !quoteCurrency) {
       return
     }
+    return
+    // if (position && account && deadline) {
+    //   const useNative = baseCurrency.isNative ? baseCurrency : quoteCurrency.isNative ? quoteCurrency : undefined
+    //   const { calldata, value } =
+    //     hasExistingPosition && tokenId
+    //       ? NonfungiblePositionManager.addCallParameters(position, {
+    //           tokenId,
+    //           slippageTolerance: allowedSlippage,
+    //           deadline: deadline.toString(),
+    //           useNative,
+    //         })
+    //       : NonfungiblePositionManager.addCallParameters(position, {
+    //           slippageTolerance: allowedSlippage,
+    //           recipient: account,
+    //           deadline: deadline.toString(),
+    //           useNative,
+    //           createPool: noLiquidity,
+    //         })
 
-    if (position && account && deadline) {
-      const useNative = baseCurrency.isNative ? baseCurrency : quoteCurrency.isNative ? quoteCurrency : undefined
-      const { calldata, value } =
-        hasExistingPosition && tokenId
-          ? NonfungiblePositionManager.addCallParameters(position, {
-              tokenId,
-              slippageTolerance: allowedSlippage,
-              deadline: deadline.toString(),
-              useNative,
-            })
-          : NonfungiblePositionManager.addCallParameters(position, {
-              slippageTolerance: allowedSlippage,
-              recipient: account,
-              deadline: deadline.toString(),
-              useNative,
-              createPool: noLiquidity,
-            })
+    //   let txn: { to: string; data: string; value: string } = {
+    //     to: NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId],
+    //     data: calldata,
+    //     value,
+    //   }
 
-      let txn: { to: string; data: string; value: string } = {
-        to: NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId],
-        data: calldata,
-        value,
-      }
+    //   if (argentWalletContract) {
+    //     const amountA = parsedAmounts[Field.CURRENCY_A]
+    //     const amountB = parsedAmounts[Field.CURRENCY_B]
+    //     const batch = [
+    //       ...(amountA && amountA.currency.isToken
+    //         ? [approveAmountCalldata(amountA, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId])]
+    //         : []),
+    //       ...(amountB && amountB.currency.isToken
+    //         ? [approveAmountCalldata(amountB, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId])]
+    //         : []),
+    //       {
+    //         to: txn.to,
+    //         data: txn.data,
+    //         value: txn.value,
+    //       },
+    //     ]
+    //     const data = argentWalletContract.interface.encodeFunctionData('wc_multiCall', [batch])
+    //     txn = {
+    //       to: argentWalletContract.address,
+    //       data,
+    //       value: '0x0',
+    //     }
+    //   }
 
-      if (argentWalletContract) {
-        const amountA = parsedAmounts[Field.CURRENCY_A]
-        const amountB = parsedAmounts[Field.CURRENCY_B]
-        const batch = [
-          ...(amountA && amountA.currency.isToken
-            ? [approveAmountCalldata(amountA, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId])]
-            : []),
-          ...(amountB && amountB.currency.isToken
-            ? [approveAmountCalldata(amountB, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId])]
-            : []),
-          {
-            to: txn.to,
-            data: txn.data,
-            value: txn.value,
-          },
-        ]
-        const data = argentWalletContract.interface.encodeFunctionData('wc_multiCall', [batch])
-        txn = {
-          to: argentWalletContract.address,
-          data,
-          value: '0x0',
-        }
-      }
+    //   setAttemptingTxn(true)
 
-      setAttemptingTxn(true)
+    //   library
+    //     .getSigner()
+    //     .estimateGas(txn)
+    //     .then((estimate) => {
+    //       const newTxn = {
+    //         ...txn,
+    //         gasLimit: calculateGasMargin(estimate),
+    //       }
 
-      library
-        .getSigner()
-        .estimateGas(txn)
-        .then((estimate) => {
-          const newTxn = {
-            ...txn,
-            gasLimit: calculateGasMargin(estimate),
-          }
-
-          return library
-            .getSigner()
-            .sendTransaction(newTxn)
-            .then((response: TransactionResponse) => {
-              setAttemptingTxn(false)
-              addTransaction(response, {
-                type: TransactionType.ADD_LIQUIDITY_V3_POOL,
-                baseCurrencyId: currencyId(baseCurrency),
-                quoteCurrencyId: currencyId(quoteCurrency),
-                createPool: Boolean(noLiquidity),
-                expectedAmountBaseRaw: parsedAmounts[Field.CURRENCY_A]?.quotient?.toString() ?? '0',
-                expectedAmountQuoteRaw: parsedAmounts[Field.CURRENCY_B]?.quotient?.toString() ?? '0',
-                feeAmount: position.pool.fee,
-              })
-              setTxHash(response.hash)
-              ReactGA.event({
-                category: 'Liquidity',
-                action: 'Add',
-                label: [currencies[Field.CURRENCY_A]?.symbol, currencies[Field.CURRENCY_B]?.symbol].join('/'),
-              })
-            })
-        })
-        .catch((error) => {
-          console.error('Failed to send transaction', error)
-          setAttemptingTxn(false)
-          // we only care if the error is something _other_ than the user rejected the tx
-          if (error?.code !== 4001) {
-            console.error(error)
-          }
-        })
-    } else {
-      return
-    }
+    //       return library
+    //         .getSigner()
+    //         .sendTransaction(newTxn)
+    //         .then((response: TransactionResponse) => {
+    //           setAttemptingTxn(false)
+    //           addTransaction(response, {
+    //             type: TransactionType.ADD_LIQUIDITY_V3_POOL,
+    //             baseCurrencyId: currencyId(baseCurrency),
+    //             quoteCurrencyId: currencyId(quoteCurrency),
+    //             createPool: Boolean(noLiquidity),
+    //             expectedAmountBaseRaw: parsedAmounts[Field.CURRENCY_A]?.quotient?.toString() ?? '0',
+    //             expectedAmountQuoteRaw: parsedAmounts[Field.CURRENCY_B]?.quotient?.toString() ?? '0',
+    //             feeAmount: position.pool.fee,
+    //           })
+    //           setTxHash(response.hash)
+    //           ReactGA.event({
+    //             category: 'Liquidity',
+    //             action: 'Add',
+    //             label: [currencies[Field.CURRENCY_A]?.symbol, currencies[Field.CURRENCY_B]?.symbol].join('/'),
+    //           })
+    //         })
+    //     })
+    //     .catch((error) => {
+    //       console.error('Failed to send transaction', error)
+    //       setAttemptingTxn(false)
+    //       // we only care if the error is something _other_ than the user rejected the tx
+    //       if (error?.code !== 4001) {
+    //         console.error(error)
+    //       }
+    //     })
+    // } else {
+    //   return
+    // }
   }
 
   const handleCurrencySelect = useCallback(
@@ -410,7 +411,7 @@ export default function AddLiquidity({
           <Trans>Unsupported Asset</Trans>
         </TYPE.main>
       </ButtonPrimary>
-    ) : !account ? (
+    ) : account === null || account === 'null' || account === undefined ? (
       <ButtonLight onClick={toggleWalletModal} $borderRadius="12px" padding={'12px'}>
         <Trans>Connect Wallet</Trans>
       </ButtonLight>

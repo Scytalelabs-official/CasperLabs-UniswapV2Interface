@@ -74,7 +74,8 @@ export interface StakingInfo {
 
 // gets the staking info from the network for the active chain id
 export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
-  const { chainId, account } = useActiveWeb3React()
+  const { chainId } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
 
   // detect if staking is ended
   const currentBlockTimestamp = useCurrentBlockTimestamp()
@@ -98,7 +99,7 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
 
   const rewardsAddresses = useMemo(() => info.map(({ stakingRewardAddress }) => stakingRewardAddress), [info])
 
-  const accountArg = useMemo(() => [account ?? undefined], [account])
+  const accountArg = useMemo(() => [account === null || account === 'null' ? undefined : undefined], [account])
 
   // get all the info from the staking rewards contracts
   const balances = useMultipleContractSingleData(rewardsAddresses, STAKING_REWARDS_INTERFACE, 'balanceOf', accountArg)
@@ -252,7 +253,8 @@ export function useDerivedStakeInfo(
   parsedAmount?: CurrencyAmount<Token>
   error?: ReactNode
 } {
-  const { account } = useActiveWeb3React()
+  // const { account } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
 
   const parsedInput: CurrencyAmount<Token> | undefined = tryParseAmount(typedValue, stakingToken)
 
@@ -262,7 +264,7 @@ export function useDerivedStakeInfo(
       : undefined
 
   let error: ReactNode | undefined
-  if (!account) {
+  if (account === null || account === 'null' || account === undefined) {
     error = <Trans>Connect Wallet</Trans>
   }
   if (!parsedAmount) {

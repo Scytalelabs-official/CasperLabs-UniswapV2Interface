@@ -1,4 +1,4 @@
-import ethereumLogoUrl from 'assets/images/ethereum-logo.png'
+import casperLogoUrl from 'assets/images/cspr.png'
 import arbitrumLogoUrl from 'assets/svg/arbitrum_logo.svg'
 import optimismLogoUrl from 'assets/svg/optimistic_ethereum.svg'
 import ms from 'ms.macro'
@@ -102,12 +102,12 @@ export const CHAIN_INFO: ChainInfo = {
     rpcUrls: ['https://rinkeby.arbitrum.io/rpc'],
   },
   [SupportedChainId.MAINNET]: {
-    docs: 'https://docs.uniswap.org/',
-    explorer: 'https://etherscan.io/',
+    docs: 'https://casper.network/docs/',
+    explorer: 'https://testnet.cspr.live/',
     infoLink: 'https://casper-uniswap-v2-info.herokuapp.com//#/',
-    label: 'Ethereum',
-    logoUrl: ethereumLogoUrl,
-    nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
+    label: 'Casper',
+    logoUrl: casperLogoUrl,
+    nativeCurrency: { name: 'CSPR', symbol: 'CSPR', decimals: 18 },
   },
   [SupportedChainId.RINKEBY]: {
     docs: 'https://docs.uniswap.org/',
