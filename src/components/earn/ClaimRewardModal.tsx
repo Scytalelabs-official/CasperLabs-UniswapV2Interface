@@ -1,15 +1,14 @@
-import { TransactionResponse } from '@ethersproject/providers'
+// import { TransactionResponse } from '@ethersproject/providers'
 import { Trans } from '@lingui/macro'
 import { ReactNode, useState } from 'react'
 import styled from 'styled-components/macro'
 
 import { useStakingContract } from '../../hooks/useContract'
-import { useActiveWeb3React } from '../../hooks/web3'
 import { StakingInfo } from '../../state/stake/hooks'
-import { TransactionType } from '../../state/transactions/actions'
+// import { TransactionType } from '../../state/transactions/actions'
 import { useTransactionAdder } from '../../state/transactions/hooks'
 import { CloseIcon, TYPE } from '../../theme'
-import { ButtonError } from '../Button'
+// import { ButtonError } from '../Button'
 import { AutoColumn } from '../Column'
 import Modal from '../Modal'
 import { LoadingView, SubmittedView } from '../ModalViews'
@@ -27,8 +26,8 @@ interface StakingModalProps {
 }
 
 export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: StakingModalProps) {
-  const { account } = useActiveWeb3React()
-
+  // const { account } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
   // monitor call to help UI loading state
   const addTransaction = useTransactionAdder()
   const [hash, setHash] = useState<string | undefined>()
@@ -42,27 +41,27 @@ export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: Sta
 
   const stakingContract = useStakingContract(stakingInfo.stakingRewardAddress)
 
-  async function onClaimReward() {
-    if (stakingContract && stakingInfo?.stakedAmount && account) {
-      setAttempting(true)
-      await stakingContract
-        .getReward({ gasLimit: 350000 })
-        .then((response: TransactionResponse) => {
-          addTransaction(response, {
-            type: TransactionType.CLAIM,
-            recipient: account,
-          })
-          setHash(response.hash)
-        })
-        .catch((error: any) => {
-          setAttempting(false)
-          console.log(error)
-        })
-    }
-  }
+  // async function onClaimReward() {
+  //   if (stakingContract && stakingInfo?.stakedAmount && account) {
+  //     setAttempting(true)
+  //     await stakingContract
+  //       .getReward({ gasLimit: 350000 })
+  //       .then((response: TransactionResponse) => {
+  //         addTransaction(response, {
+  //           type: TransactionType.CLAIM,
+  //           recipient: account,
+  //         })
+  //         setHash(response.hash)
+  //       })
+  //       .catch((error: any) => {
+  //         setAttempting(false)
+  //         console.log(error)
+  //       })
+  //   }
+  // }
 
   let error: ReactNode | undefined
-  if (!account) {
+  if (account === null || account === 'null' || account === undefined) {
     error = <Trans>Connect Wallet</Trans>
   }
   if (!stakingInfo?.stakedAmount) {
@@ -92,9 +91,9 @@ export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: Sta
           <TYPE.subHeader style={{ textAlign: 'center' }}>
             <Trans>When you claim without withdrawing your liquidity remains in the mining pool.</Trans>
           </TYPE.subHeader>
-          <ButtonError disabled={!!error} error={!!error && !!stakingInfo?.stakedAmount} onClick={onClaimReward}>
+          {/* <ButtonError disabled={!!error} error={!!error && !!stakingInfo?.stakedAmount} onClick={onClaimReward}>
             {error ?? <Trans>Claim</Trans>}
-          </ButtonError>
+          </ButtonError> */}
         </ContentWrapper>
       )}
       {attempting && !hash && (

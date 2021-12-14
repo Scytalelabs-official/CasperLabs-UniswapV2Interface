@@ -3,7 +3,6 @@ import { AbstractConnector } from '@web3-react/abstract-connector'
 import { darken } from 'polished'
 import styled from 'styled-components/macro'
 
-import { injected } from '../../connectors'
 import { SUPPORTED_WALLETS } from '../../constants/wallet'
 import Loader from '../Loader'
 import Option from './Option'
@@ -73,7 +72,7 @@ export default function PendingView({
   connector?: AbstractConnector
   error?: boolean
   setPendingError: (error: boolean) => void
-  tryActivation: (connector: AbstractConnector) => void
+  tryActivation: () => void
 }) {
   const isMetamask = window?.ethereum?.isMetaMask
 
@@ -89,7 +88,7 @@ export default function PendingView({
               <ErrorButton
                 onClick={() => {
                   setPendingError(false)
-                  connector && tryActivation(connector)
+                  tryActivation()
                 }}
               >
                 <Trans>Try Again</Trans>
@@ -105,28 +104,17 @@ export default function PendingView({
       </LoadingMessage>
       {Object.keys(SUPPORTED_WALLETS).map((key) => {
         const option = SUPPORTED_WALLETS[key]
-        if (option.connector === connector) {
-          if (option.connector === injected) {
-            if (isMetamask && option.name !== 'MetaMask') {
-              return null
-            }
-            if (!isMetamask && option.name === 'MetaMask') {
-              return null
-            }
-          }
-          return (
-            <Option
-              id={`connect-${key}`}
-              key={key}
-              clickable={false}
-              color={option.color}
-              header={option.name}
-              subheader={option.description}
-              icon={option.iconURL}
-            />
-          )
-        }
-        return null
+        return (
+          <Option
+            id={`connect-${key}`}
+            key={key}
+            clickable={false}
+            color={option.color}
+            header={option.name}
+            subheader={option.description}
+            icon={option.iconURL}
+          />
+        )
       })}
     </PendingSection>
   )

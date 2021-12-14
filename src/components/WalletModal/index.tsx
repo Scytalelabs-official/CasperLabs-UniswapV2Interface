@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
-import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
+import { Signer } from 'casper-js-sdk'
 import { AutoColumn } from 'components/Column'
 import { PrivacyPolicy } from 'components/PrivacyPolicy'
 import Row, { AutoRow, RowBetween } from 'components/Row'
@@ -12,6 +12,7 @@ import ReactGA from 'react-ga'
 import styled from 'styled-components/macro'
 
 import MetamaskIcon from '../../assets/images/cspr.png'
+import SignerIcon from '../../assets/images/cspr.png'
 import { ReactComponent as Close } from '../../assets/images/x.svg'
 import { fortmatic, injected, portis } from '../../connectors'
 import { OVERLAY_READY } from '../../connectors/Fortmatic'
@@ -125,6 +126,8 @@ const WALLET_VIEWS = {
   ACCOUNT: 'account',
   PENDING: 'pending',
   LEGAL: 'legal',
+  LOCKED: 'locked',
+  UNLOCKED: 'unlocked',
 }
 
 export default function WalletModal({
@@ -137,10 +140,15 @@ export default function WalletModal({
   ENSName?: string
 }) {
   // important that these are destructed from the account-specific web3-react context
-  const { active, account, connector, activate, error } = useWeb3React()
+  const { active, connector, activate, error } = useWeb3React()
+  const account = localStorage.getItem('account')
 
   const [walletView, setWalletView] = useState(WALLET_VIEWS.ACCOUNT)
   const previousWalletView = usePrevious(walletView)
+
+  const [isConnected, setIsConncectd] = useState(false)
+  const [isLocked, setIsLocked] = useState(true)
+  const [activeKey, setActiveKey] = useState('')
 
   const [pendingWallet, setPendingWallet] = useState<AbstractConnector | undefined>()
 
@@ -153,12 +161,28 @@ export default function WalletModal({
 
   const logMonitoringEvent = useWalletConnectMonitoringEventCallback()
 
+  const connectionChecker = async () => {
+    const publicKey = await Signer.getActivePublicKey()
+    console.log('publicKey', publicKey)
+    localStorage.setItem('account', publicKey)
+    console.log('foran', localStorage.getItem('account'))
+    logMonitoringEvent({ publicKey })
+    setActiveKey(publicKey)
+    setWalletView(WALLET_VIEWS.ACCOUNT)
+  }
+
   // close on connection, when logged out before
   useEffect(() => {
-    if (account && !previousAccount && walletModalOpen) {
+    if (account !== null && !previousAccount && walletModalOpen) {
       toggleWalletModal()
     }
   }, [account, previousAccount, toggleWalletModal, walletModalOpen])
+
+  useEffect(() => {
+    if (isConnected && !isLocked) {
+      connectionChecker()
+    }
+  }, [isConnected, isLocked, connectionChecker])
 
   // always reset to account view
   useEffect(() => {
@@ -167,20 +191,64 @@ export default function WalletModal({
       setWalletView(WALLET_VIEWS.ACCOUNT)
     }
   }, [walletModalOpen])
-
   // close modal when a connection is successful
   const activePrevious = usePrevious(active)
-  const connectorPrevious = usePrevious(connector)
   useEffect(() => {
-    if (walletModalOpen && ((active && !activePrevious) || (connector && connector !== connectorPrevious && !error))) {
+    if (walletModalOpen && active && !activePrevious) {
       setWalletView(WALLET_VIEWS.ACCOUNT)
     }
-  }, [setWalletView, active, error, connector, walletModalOpen, activePrevious, connectorPrevious])
+    window.addEventListener('signer:connected', (msg: any) => {
+      console.log('Initial State: ', msg)
+      setIsConncectd(true)
+      setIsLocked(!msg.detail.isUnlocked)
+      setActiveKey(msg.detail.activeKey)
+      localStorage.setItem('account', msg.detail.activeKey)
+    })
+    window.addEventListener('signer:disconnected', (msg: any) => {
+      console.log('Initial State: ', msg)
+      setIsConncectd(msg.detail.isConnected)
+      setIsLocked(!msg.detail.isUnlocked)
+      setActiveKey(msg.detail.activeKey)
+      localStorage.setItem('account', msg.detail.activeKey)
+    })
+    window.addEventListener('signer:tabUpdated', (msg: any) => {
+      console.log('Initial State: ', msg)
+      setIsConncectd(msg.detail.isConnected)
+      setIsLocked(!msg.detail.isUnlocked)
+      setActiveKey(msg.detail.activeKey)
+      localStorage.setItem('account', msg.detail.activeKey)
+    })
+    window.addEventListener('signer:activeKeyChanged', (msg: any) => {
+      console.log('Initial State: ', msg)
+      setActiveKey(msg.detail.activeKey)
+      localStorage.setItem('account', msg.detail.activeKey)
+    })
+    window.addEventListener('signer:locked', (msg: any) => {
+      console.log('Initial State: ', msg)
+      setActiveKey(msg.detail.activeKey)
+      setIsLocked(!msg.detail.isUnlocked)
+      localStorage.setItem('account', msg.detail.activeKey)
+    })
+    window.addEventListener('signer:unlocked', (msg: any) => {
+      console.log('Initial State: ', msg)
+      setIsConncectd(msg.detail.isConnected)
+      setIsLocked(!msg.detail.isUnlocked)
+      setActiveKey(msg.detail.activeKey)
+      localStorage.setItem('account', msg.detail.activeKey)
+    })
+    window.addEventListener('signer:initialState', (msg: any) => {
+      console.log('Initial State: ', msg)
+      setIsConncectd(msg.detail.isConnected)
+      setIsLocked(!msg.detail.isUnlocked)
+      setActiveKey(msg.detail.activeKey)
+      localStorage.setItem('account', msg.detail.activeKey)
+    })
+  }, [setWalletView, active, error, walletModalOpen, activePrevious])
 
-  const tryActivation = async (connector: AbstractConnector | undefined) => {
+  const tryActivation = async () => {
     let name = ''
     Object.keys(SUPPORTED_WALLETS).map((key) => {
-      if (connector === SUPPORTED_WALLETS[key].connector) {
+      if ('CasperSigner' === SUPPORTED_WALLETS[key].name) {
         return (name = SUPPORTED_WALLETS[key].name)
       }
       return true
@@ -191,27 +259,11 @@ export default function WalletModal({
       action: 'Change Wallet',
       label: name,
     })
-    setPendingWallet(connector) // set wallet for pending view
     setWalletView(WALLET_VIEWS.PENDING)
-
-    // if the connector is walletconnect and the user has already tried to connect, manually reset the connector
-    if (connector instanceof WalletConnectConnector) {
-      connector.walletConnectProvider = undefined
-    }
-
-    connector &&
-      activate(connector, undefined, true)
-        .then(async () => {
-          const walletAddress = await connector.getAccount()
-          logMonitoringEvent({ walletAddress })
-        })
-        .catch((error) => {
-          if (error instanceof UnsupportedChainIdError) {
-            activate(connector) // a little janky...can't use setError because the connector isn't set
-          } else {
-            setPendingError(true)
-          }
-        })
+    const data = await Signer.sendConnectionRequest()
+    console.log('data', data)
+    // const isConnected = await Signer.isConnected()
+    console.log('isConnected', isConnected)
   }
 
   // close wallet modal if fortmatic modal is active
@@ -226,6 +278,8 @@ export default function WalletModal({
     const isMetamask = window.ethereum && window.ethereum.isMetaMask
     return Object.keys(SUPPORTED_WALLETS).map((key) => {
       const option = SUPPORTED_WALLETS[key]
+      console.log('option', option)
+      console.log('isMetamask', isMetamask)
       // check for mobile options
       if (isMobile) {
         //disable portis on mobile for now
@@ -237,11 +291,10 @@ export default function WalletModal({
           return (
             <Option
               onClick={() => {
-                option.connector !== connector && !option.href && tryActivation(option.connector)
+                option.connector !== connector && !option.href && tryActivation()
               }}
               id={`connect-${key}`}
               key={key}
-              active={option.connector && option.connector === connector}
               color={option.color}
               link={option.href}
               header={option.name}
@@ -269,6 +322,18 @@ export default function WalletModal({
                 icon={MetamaskIcon}
               />
             )
+          } else if (option.name === 'CasperSigner') {
+            return (
+              <Option
+                id={`connect-${key}`}
+                key={key}
+                color={'#E8831D'}
+                header={<Trans>Install Signer</Trans>}
+                subheader={null}
+                link={'https://metamask.io/'}
+                icon={SignerIcon}
+              />
+            )
           } else {
             return null //dont want to return install twice
           }
@@ -281,6 +346,25 @@ export default function WalletModal({
         else if (option.name === 'Injected' && isMetamask) {
           return null
         }
+        // likewise for CasperSigner
+        else if (option.name === 'CasperSigner' && isMetamask) {
+          return null
+        }
+      } else if (option.name === 'CasperSigner') {
+        return (
+          <Option
+            onClick={() => {
+              tryActivation()
+            }}
+            id={`connect-${key}`}
+            key={key}
+            color={option.color}
+            link={option.href}
+            header={option.name}
+            subheader={null}
+            icon={option.iconURL}
+          />
+        )
       }
 
       // return rest of options
@@ -290,9 +374,7 @@ export default function WalletModal({
           <Option
             id={`connect-${key}`}
             onClick={() => {
-              option.connector === connector
-                ? setWalletView(WALLET_VIEWS.ACCOUNT)
-                : !option.href && tryActivation(option.connector)
+              option.connector === connector ? setWalletView(WALLET_VIEWS.ACCOUNT) : !option.href && tryActivation()
             }}
             key={key}
             active={option.connector === connector}
@@ -353,7 +435,7 @@ export default function WalletModal({
         </UpperSection>
       )
     }
-    if (account && walletView === WALLET_VIEWS.ACCOUNT) {
+    if (account !== 'null' && walletView === WALLET_VIEWS.ACCOUNT) {
       return (
         <AccountDetails
           toggleWalletModal={toggleWalletModal}
@@ -383,7 +465,7 @@ export default function WalletModal({
         ) : (
           <HeaderRow>
             <HoverText>
-              <Trans>Connect a wallet</Trans>
+              <Trans>Connect a wallete</Trans>
             </HoverText>
           </HeaderRow>
         )}

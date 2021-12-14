@@ -130,8 +130,8 @@ export function useDerivedSwapInfo(toggledVersion: Version | undefined): {
   bestTrade: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType> | undefined
   allowedSlippage: Percent
 } {
-  const { account } = useActiveWeb3React()
-
+  // const { account } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
   const {
     independentField,
     typedValue,
@@ -145,7 +145,7 @@ export function useDerivedSwapInfo(toggledVersion: Version | undefined): {
   const recipientLookup = useENS(recipient ?? undefined)
   const to: string | null = (recipient === null ? account : recipientLookup.address) ?? null
 
-  const relevantTokenBalances = useCurrencyBalances(account ?? undefined, [
+  const relevantTokenBalances = useCurrencyBalances(account === null || account === 'null' ? undefined : undefined, [
     inputCurrency ?? undefined,
     outputCurrency ?? undefined,
   ])
@@ -196,7 +196,7 @@ export function useDerivedSwapInfo(toggledVersion: Version | undefined): {
   }
 
   let inputError: ReactNode | undefined
-  if (!account) {
+  if (account === null || account === 'null' || account === undefined) {
     inputError = <Trans>Connect Wallet</Trans>
   }
 
@@ -208,7 +208,7 @@ export function useDerivedSwapInfo(toggledVersion: Version | undefined): {
     inputError = inputError ?? <Trans>Select a token</Trans>
   }
 
-  const formattedTo = isAddress(to)
+  const formattedTo = to
   if (!to || !formattedTo) {
     inputError = inputError ?? <Trans>Enter a recipient</Trans>
   } else {

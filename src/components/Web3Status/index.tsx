@@ -136,7 +136,8 @@ function WrappedStatusIcon({ connector }: { connector: AbstractConnector }) {
 }
 
 function Web3StatusInner() {
-  const { account, connector, error } = useWeb3React()
+  const { connector, error } = useWeb3React()
+  const account = localStorage.getItem('account')
 
   const { ENSName } = useENSName(account ?? undefined)
 
@@ -152,8 +153,9 @@ function Web3StatusInner() {
   const hasPendingTransactions = !!pending.length
   const hasSocks = useHasSocks()
   const toggleWalletModal = useWalletModalToggle()
+  console.log('ISNULL', account !== null)
 
-  if (account) {
+  if (account !== null) {
     return (
       <Web3StatusConnected id="web3-status-connected" onClick={toggleWalletModal} pending={hasPendingTransactions}>
         {hasPendingTransactions ? (
@@ -181,7 +183,7 @@ function Web3StatusInner() {
     )
   } else {
     return (
-      <Web3StatusConnect id="connect-wallet" onClick={toggleWalletModal} faded={!account}>
+      <Web3StatusConnect id="connect-wallet" onClick={toggleWalletModal} faded={account !== 'null'}>
         <Text>
           <Trans>Connect Wallet</Trans>
         </Text>
@@ -191,7 +193,12 @@ function Web3StatusInner() {
 }
 
 export default function Web3Status() {
-  const { active, account } = useWeb3React()
+  const { active } = useWeb3React()
+  const account = localStorage.getItem('account')
+  console.log('active', active)
+  console.log('account', account)
+  console.log('localStorage.getItem(active)', localStorage.getItem('active'))
+  console.log('localStorage.getItem(account)', account == 'null')
   const contextNetwork = useWeb3React(NetworkContextName)
 
   const { ENSName } = useENSName(account ?? undefined)

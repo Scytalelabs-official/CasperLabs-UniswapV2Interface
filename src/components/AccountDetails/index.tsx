@@ -1,5 +1,6 @@
 import { Trans } from '@lingui/macro'
 import { AbstractConnector } from '@web3-react/abstract-connector'
+import { Signer } from 'casper-js-sdk'
 import { useCallback, useContext } from 'react'
 import { ExternalLink as LinkIcon } from 'react-feather'
 import { useAppDispatch } from 'state/hooks'
@@ -238,7 +239,9 @@ export default function AccountDetails({
   ENSName,
   openOptions,
 }: AccountDetailsProps) {
-  const { chainId, account, connector } = useActiveWeb3React()
+  const { chainId, connector } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
+  console.log('ENSName', ENSName)
   const theme = useContext(ThemeContext)
   const dispatch = useAppDispatch()
 
@@ -253,7 +256,7 @@ export default function AccountDetails({
       .map((k) => SUPPORTED_WALLETS[k].name)[0]
     return (
       <WalletName>
-        <Trans>Connected with {name}</Trans>
+        <Trans>Connected with Casper Signer</Trans>
       </WalletName>
     )
   }
@@ -281,7 +284,7 @@ export default function AccountDetails({
                     <WalletAction
                       style={{ fontSize: '.825rem', fontWeight: 400, marginRight: '8px' }}
                       onClick={() => {
-                        ;(connector as any).close()
+                        Signer.disconnectFromSite()
                       }}
                     >
                       <Trans>Disconnect</Trans>
@@ -310,7 +313,9 @@ export default function AccountDetails({
                     <>
                       <div>
                         {connector && <WrappedStatusIcon connector={connector} />}
-                        <p> {account && shortenAddress(account)}</p>
+                        <p>
+                          {account !== null && account !== 'null' && account !== undefined && shortenAddress(account)}
+                        </p>
                       </div>
                     </>
                   )}
@@ -321,14 +326,14 @@ export default function AccountDetails({
                   <>
                     <AccountControl>
                       <div>
-                        {account && (
+                        {account !== null && account !== 'null' && account !== undefined && (
                           <Copy toCopy={account}>
                             <span style={{ marginLeft: '4px' }}>
                               <Trans>Copy Address</Trans>
                             </span>
                           </Copy>
                         )}
-                        {chainId && account && (
+                        {chainId && account !== null && account !== 'null' && account !== undefined && (
                           <AddressLink
                             hasENS={!!ENSName}
                             isENS={true}
@@ -347,7 +352,7 @@ export default function AccountDetails({
                   <>
                     <AccountControl>
                       <div>
-                        {account && (
+                        {account !== null && account !== 'null' && account !== undefined && (
                           <Copy toCopy={account}>
                             <span style={{ marginLeft: '4px' }}>
                               <Trans>Copy Address</Trans>
