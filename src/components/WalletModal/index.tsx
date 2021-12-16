@@ -173,7 +173,7 @@ export default function WalletModal({
 
   // close on connection, when logged out before
   useEffect(() => {
-    if (account !== null && !previousAccount && walletModalOpen) {
+    if (account !== null && account !== 'null' && account !== undefined && !previousAccount && walletModalOpen) {
       toggleWalletModal()
     }
   }, [account, previousAccount, toggleWalletModal, walletModalOpen])
@@ -435,7 +435,7 @@ export default function WalletModal({
         </UpperSection>
       )
     }
-    if (account !== 'null' && walletView === WALLET_VIEWS.ACCOUNT) {
+    if (account !== null && account !== 'null' && account !== undefined && walletView === WALLET_VIEWS.ACCOUNT) {
       return (
         <AccountDetails
           toggleWalletModal={toggleWalletModal}

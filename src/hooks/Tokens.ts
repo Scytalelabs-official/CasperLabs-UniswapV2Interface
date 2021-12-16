@@ -184,6 +184,7 @@ export function useToken(tokenAddress?: string | null): Token | undefined | null
   const tokenContract = useTokenContract(address ? address : undefined, false)
   const tokenContractBytes32 = useBytes32TokenContract(address ? address : undefined, false)
   const token: Token | undefined = address ? tokens[address] : undefined
+  console.log('tokentoken', token)
 
   const tokenName = useSingleCallResult(token ? undefined : tokenContract, 'name', undefined, NEVER_RELOAD)
   const tokenNameBytes32 = useSingleCallResult(
@@ -230,7 +231,10 @@ export function useToken(tokenAddress?: string | null): Token | undefined | null
 export function useCurrency(currencyId: string | null | undefined): Currency | null | undefined {
   const { chainId } = useActiveWeb3React()
   const isETH = currencyId?.toUpperCase() === 'ETH'
+  console.log('currencyId', currencyId)
   const token = useToken(isETH ? undefined : currencyId)
+  console.log('token11', token)
+  console.log('chainIdchainId', chainId)
   const extendedEther = useMemo(
     () =>
       chainId
@@ -240,6 +244,8 @@ export function useCurrency(currencyId: string | null | undefined): Currency | n
     [chainId]
   )
   const weth = chainId ? WETH9_EXTENDED[chainId] : undefined
+  console.log('weth', weth)
+  console.log('extendedEther', extendedEther)
   if (currencyId === null || currencyId === undefined) return currencyId
   if (weth?.address?.toUpperCase() === currencyId?.toUpperCase()) return weth
   return isETH ? extendedEther : token

@@ -10,6 +10,8 @@ export const AMPL = new Token(
   'AMPL',
   'Ampleforth'
 )
+console.log('AMPL', AMPL)
+
 export const DAI = new Token(
   SupportedChainId.MAINNET,
   '0x6B175474E89094C44Da98b954EedeAC495271d0F',
@@ -138,10 +140,10 @@ export const ETH2X_FLI = new Token(
 )
 export const UNI: { [chainId: number]: Token } = {
   [SupportedChainId.MAINNET]: new Token(SupportedChainId.MAINNET, UNI_ADDRESS[1], 18, 'UNI', 'Uniswap'),
-  [SupportedChainId.RINKEBY]: new Token(SupportedChainId.RINKEBY, UNI_ADDRESS[4], 18, 'UNI', 'Uniswap'),
-  [SupportedChainId.ROPSTEN]: new Token(SupportedChainId.ROPSTEN, UNI_ADDRESS[3], 18, 'UNI', 'Uniswap'),
-  [SupportedChainId.GOERLI]: new Token(SupportedChainId.GOERLI, UNI_ADDRESS[5], 18, 'UNI', 'Uniswap'),
-  [SupportedChainId.KOVAN]: new Token(SupportedChainId.KOVAN, UNI_ADDRESS[42], 18, 'UNI', 'Uniswap'),
+  // [SupportedChainId.RINKEBY]: new Token(SupportedChainId.RINKEBY, UNI_ADDRESS[4], 18, 'UNI', 'Uniswap'),
+  // [SupportedChainId.ROPSTEN]: new Token(SupportedChainId.ROPSTEN, UNI_ADDRESS[3], 18, 'UNI', 'Uniswap'),
+  // [SupportedChainId.GOERLI]: new Token(SupportedChainId.GOERLI, UNI_ADDRESS[5], 18, 'UNI', 'Uniswap'),
+  // [SupportedChainId.KOVAN]: new Token(SupportedChainId.KOVAN, UNI_ADDRESS[42], 18, 'UNI', 'Uniswap'),
 }
 
 export const WETH9_EXTENDED: { [chainId: number]: Token } = {
@@ -150,8 +152,8 @@ export const WETH9_EXTENDED: { [chainId: number]: Token } = {
     SupportedChainId.OPTIMISM,
     '0x4200000000000000000000000000000000000006',
     18,
-    'WETH',
-    'Wrapped Ether'
+    'WCSPR',
+    'Wrapped Casper'
   ),
   [SupportedChainId.OPTIMISTIC_KOVAN]: new Token(
     SupportedChainId.OPTIMISTIC_KOVAN,

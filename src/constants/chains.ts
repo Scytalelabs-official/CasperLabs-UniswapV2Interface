@@ -7,10 +7,10 @@ import { ARBITRUM_LIST, OPTIMISM_LIST } from './lists'
 
 export enum SupportedChainId {
   MAINNET = 1,
-  ROPSTEN = 3,
-  RINKEBY = 4,
-  GOERLI = 5,
-  KOVAN = 42,
+  // ROPSTEN = 3,
+  // RINKEBY = 4,
+  // GOERLI = 5,
+  // KOVAN = 42,
 
   ARBITRUM_ONE = 42161,
   ARBITRUM_RINKEBY = 421611,
@@ -20,10 +20,10 @@ export enum SupportedChainId {
 
 export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
   SupportedChainId.MAINNET,
-  SupportedChainId.ROPSTEN,
-  SupportedChainId.RINKEBY,
-  SupportedChainId.GOERLI,
-  SupportedChainId.KOVAN,
+  // SupportedChainId.ROPSTEN,
+  // SupportedChainId.RINKEBY,
+  // SupportedChainId.GOERLI,
+  // SupportedChainId.KOVAN,
 
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.ARBITRUM_RINKEBY,
@@ -33,10 +33,10 @@ export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
 
 export const L1_CHAIN_IDS = [
   SupportedChainId.MAINNET,
-  SupportedChainId.ROPSTEN,
-  SupportedChainId.RINKEBY,
-  SupportedChainId.GOERLI,
-  SupportedChainId.KOVAN,
+  // SupportedChainId.ROPSTEN,
+  // SupportedChainId.RINKEBY,
+  // SupportedChainId.GOERLI,
+  // SupportedChainId.KOVAN,
 ] as const
 
 export type SupportedL1ChainId = typeof L1_CHAIN_IDS[number]
@@ -109,34 +109,34 @@ export const CHAIN_INFO: ChainInfo = {
     logoUrl: casperLogoUrl,
     nativeCurrency: { name: 'CSPR', symbol: 'CSPR', decimals: 18 },
   },
-  [SupportedChainId.RINKEBY]: {
-    docs: 'https://docs.uniswap.org/',
-    explorer: 'https://rinkeby.etherscan.io/',
-    infoLink: 'https://casper-uniswap-v2-info.herokuapp.com//#/',
-    label: 'Rinkeby',
-    nativeCurrency: { name: 'Rinkeby ETH', symbol: 'rinkETH', decimals: 18 },
-  },
-  [SupportedChainId.ROPSTEN]: {
-    docs: 'https://docs.uniswap.org/',
-    explorer: 'https://ropsten.etherscan.io/',
-    infoLink: 'https://casper-uniswap-v2-info.herokuapp.com//#/',
-    label: 'Ropsten',
-    nativeCurrency: { name: 'Ropsten ETH', symbol: 'ropETH', decimals: 18 },
-  },
-  [SupportedChainId.KOVAN]: {
-    docs: 'https://docs.uniswap.org/',
-    explorer: 'https://kovan.etherscan.io/',
-    infoLink: 'https://casper-uniswap-v2-info.herokuapp.com//#/',
-    label: 'Kovan',
-    nativeCurrency: { name: 'Kovan ETH', symbol: 'kovETH', decimals: 18 },
-  },
-  [SupportedChainId.GOERLI]: {
-    docs: 'https://docs.uniswap.org/',
-    explorer: 'https://goerli.etherscan.io/',
-    infoLink: 'https://casper-uniswap-v2-info.herokuapp.com//#/',
-    label: 'Görli',
-    nativeCurrency: { name: 'Görli ETH', symbol: 'görETH', decimals: 18 },
-  },
+  // [SupportedChainId.RINKEBY]: {
+  //   docs: 'https://docs.uniswap.org/',
+  //   explorer: 'https://rinkeby.etherscan.io/',
+  //   infoLink: 'https://casper-uniswap-v2-info.herokuapp.com//#/',
+  //   label: 'Rinkeby',
+  //   nativeCurrency: { name: 'Rinkeby ETH', symbol: 'rinkETH', decimals: 18 },
+  // },
+  // [SupportedChainId.ROPSTEN]: {
+  //   docs: 'https://docs.uniswap.org/',
+  //   explorer: 'https://ropsten.etherscan.io/',
+  //   infoLink: 'https://casper-uniswap-v2-info.herokuapp.com//#/',
+  //   label: 'Ropsten',
+  //   nativeCurrency: { name: 'Ropsten ETH', symbol: 'ropETH', decimals: 18 },
+  // },
+  // [SupportedChainId.KOVAN]: {
+  //   docs: 'https://docs.uniswap.org/',
+  //   explorer: 'https://kovan.etherscan.io/',
+  //   infoLink: 'https://casper-uniswap-v2-info.herokuapp.com//#/',
+  //   label: 'Kovan',
+  //   nativeCurrency: { name: 'Kovan ETH', symbol: 'kovETH', decimals: 18 },
+  // },
+  // [SupportedChainId.GOERLI]: {
+  //   docs: 'https://docs.uniswap.org/',
+  //   explorer: 'https://goerli.etherscan.io/',
+  //   infoLink: 'https://casper-uniswap-v2-info.herokuapp.com//#/',
+  //   label: 'Görli',
+  //   nativeCurrency: { name: 'Görli ETH', symbol: 'görETH', decimals: 18 },
+  // },
   [SupportedChainId.OPTIMISM]: {
     blockWaitMsBeforeWarning: ms`15m`,
     bridge: 'https://gateway.optimism.io/',

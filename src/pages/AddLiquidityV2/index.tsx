@@ -56,10 +56,12 @@ export default function AddLiquidity({
   const { chainId, library } = useActiveWeb3React()
   const account = localStorage.getItem('account')
   const theme = useContext(ThemeContext)
-
+  console.log('currencyIdA', currencyIdA)
+  console.log('currencyIdB', currencyIdB)
   const currencyA = useCurrency(currencyIdA)
   const currencyB = useCurrency(currencyIdB)
-
+  console.log('currencyA', currencyA)
+  console.log('currencyB', currencyB)
   const oneCurrencyIsWETH = Boolean(
     chainId &&
       ((currencyA && currencyA.equals(WETH9_EXTENDED[chainId])) ||
@@ -85,7 +87,8 @@ export default function AddLiquidity({
     poolTokenPercentage,
     error,
   } = useDerivedMintInfo(currencyA ?? undefined, currencyB ?? undefined)
-
+  console.log('currencies', currencies)
+  console.log('price', price)
   const { onFieldAInput, onFieldBInput } = useMintActionHandlers(noLiquidity)
 
   const isValid = !error

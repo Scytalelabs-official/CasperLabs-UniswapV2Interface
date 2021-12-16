@@ -11,7 +11,7 @@ import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 
 import { ReactComponent as DropDown } from '../../assets/images/dropdown.svg'
 import useTheme from '../../hooks/useTheme'
-import { useActiveWeb3React } from '../../hooks/web3'
+// import { useActiveWeb3React } from '../../hooks/web3'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
 import { TYPE } from '../../theme'
 import { ButtonGray } from '../Button'
@@ -198,8 +198,13 @@ export default function CurrencyInputPanel({
   ...rest
 }: CurrencyInputPanelProps) {
   const [modalOpen, setModalOpen] = useState(false)
-  const { account } = useActiveWeb3React()
-  const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
+  // const { account } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
+  const selectedCurrencyBalance = useCurrencyBalance(
+    account === null || account === 'null' ? undefined : undefined,
+    currency ?? undefined
+  )
+  console.log('selectedCurrencyBalance', selectedCurrencyBalance)
   const theme = useTheme()
 
   const handleDismissSearch = useCallback(() => {

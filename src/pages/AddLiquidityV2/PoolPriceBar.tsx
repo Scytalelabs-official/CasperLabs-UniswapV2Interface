@@ -22,6 +22,7 @@ export function PoolPriceBar({
   price?: Price<Currency, Currency>
 }) {
   const theme = useContext(ThemeContext)
+  console.log('price1', price)
   return (
     <AutoColumn gap="md">
       <AutoRow justify="space-around" gap="4px">

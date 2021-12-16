@@ -89,7 +89,7 @@ export default function PoolFinder() {
   const prerequisiteMessage = (
     <LightCard padding="45px 10px">
       <Text textAlign="center">
-        {account !== null && account !== 'null' && account !== undefined ? (
+        {account === null || account === 'null' || account === undefined ? (
           <Trans>Connect to a wallet to find pools</Trans>
         ) : (
           <Trans>Select a token to find your v2 liquidity.</Trans>

@@ -268,7 +268,7 @@ export default function Header() {
 
   const availableClaim: boolean = useUserHasAvailableClaim(account)
 
-  const { claimTxn } = useUserHasSubmittedClaim(account ?? undefined)
+  const { claimTxn } = useUserHasSubmittedClaim(account === null || account === 'null' ? undefined : undefined)
 
   const [showUniBalanceModal, setShowUniBalanceModal] = useState(false)
   const showClaimPopup = useShowClaimPopup()

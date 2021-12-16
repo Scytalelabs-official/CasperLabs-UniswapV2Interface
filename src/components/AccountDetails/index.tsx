@@ -285,6 +285,7 @@ export default function AccountDetails({
                       style={{ fontSize: '.825rem', fontWeight: 400, marginRight: '8px' }}
                       onClick={() => {
                         Signer.disconnectFromSite()
+                        localStorage.removeItem('account')
                       }}
                     >
                       <Trans>Disconnect</Trans>
@@ -359,7 +360,7 @@ export default function AccountDetails({
                             </span>
                           </Copy>
                         )}
-                        {chainId && account && (
+                        {chainId && account !== null && account !== 'null' && account !== undefined && (
                           <AddressLink
                             hasENS={!!ENSName}
                             isENS={false}

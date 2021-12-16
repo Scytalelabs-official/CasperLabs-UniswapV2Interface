@@ -14,10 +14,10 @@ function chainIdToNetworkName(networkId: SupportedChainId): Network {
   switch (networkId) {
     case SupportedChainId.MAINNET:
       return 'ethereum'
-    case SupportedChainId.ARBITRUM_ONE:
-      return 'arbitrum'
-    case SupportedChainId.OPTIMISM:
-      return 'optimism'
+    // case SupportedChainId.ARBITRUM_ONE:
+    //   return 'arbitrum'
+    // case SupportedChainId.OPTIMISM:
+    //   return 'optimism'
     default:
       return 'ethereum'
   }
@@ -28,7 +28,7 @@ export const getTokenLogoURL = (
   chainId: SupportedChainId = SupportedChainId.MAINNET
 ): string | void => {
   const networkName = chainIdToNetworkName(chainId)
-  const networksWithUrls = [SupportedChainId.ARBITRUM_ONE, SupportedChainId.MAINNET, SupportedChainId.OPTIMISM]
+  const networksWithUrls = [SupportedChainId.MAINNET]
   if (networksWithUrls.includes(chainId)) {
     return `https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/${networkName}/assets/${address}/logo.png`
   }

@@ -44,11 +44,15 @@ const StyledClose = styled(X)`
  * Content for balance stats modal
  */
 export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowUniBalanceModal: any }) {
-  const { account, chainId } = useActiveWeb3React()
+  const { chainId } = useActiveWeb3React()
+  const account = localStorage.getItem('account')
   const uni = chainId ? UNI[chainId] : undefined
 
   const total = useAggregateUniBalance()
-  const uniBalance: CurrencyAmount<Token> | undefined = useTokenBalance(account ?? undefined, uni)
+  const uniBalance: CurrencyAmount<Token> | undefined = useTokenBalance(
+    account === null || account === 'null' ? undefined : undefined,
+    uni
+  )
   const uniToClaim: CurrencyAmount<Token> | undefined = useTotalUniEarned()
 
   const totalSupply: CurrencyAmount<Token> | undefined = useTotalSupply(uni)
@@ -77,7 +81,7 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
           </RowBetween>
         </CardSection>
         <Break />
-        {account && (
+        {account !== null && account !== 'null' && account !== undefined && (
           <>
             <CardSection gap="sm">
               <AutoColumn gap="md" justify="center">
