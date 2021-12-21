@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@casperswap/sdk-core'
 
 export enum V3TradeState {
   LOADING,

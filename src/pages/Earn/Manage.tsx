@@ -1,5 +1,5 @@
+import { CurrencyAmount, Token } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
-import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
 import { useCallback, useState } from 'react'
 import { Link } from 'react-router-dom'

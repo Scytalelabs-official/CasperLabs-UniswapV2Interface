@@ -1,5 +1,5 @@
+import { Currency, CurrencyAmount } from '@casperswap/sdk-core'
 import { BigNumber } from '@ethersproject/bignumber'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
 import { Pool } from '@uniswap/v3-sdk'
 import { useEffect, useState } from 'react'
 import { useBlockNumber } from 'state/application/hooks'

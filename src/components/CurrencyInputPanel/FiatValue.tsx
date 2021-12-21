@@ -1,5 +1,5 @@
+import { Currency, CurrencyAmount, Percent } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
-import { Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
 import HoverInlineText from 'components/HoverInlineText'
 import { useMemo } from 'react'
 

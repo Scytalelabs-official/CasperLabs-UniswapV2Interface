@@ -141,6 +141,7 @@ export default function WalletModal({
 }) {
   // important that these are destructed from the account-specific web3-react context
   const { active, connector, activate, error } = useWeb3React()
+  console.log('activee', active)
   const account = localStorage.getItem('account')
 
   const [walletView, setWalletView] = useState(WALLET_VIEWS.ACCOUNT)

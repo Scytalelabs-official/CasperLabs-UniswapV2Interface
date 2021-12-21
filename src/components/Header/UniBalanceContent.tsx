@@ -1,5 +1,5 @@
+import { CurrencyAmount, Token } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
-import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { CHAIN_INFO, SupportedChainId } from 'constants/chains'
 import { useMemo } from 'react'
 import { X } from 'react-feather'

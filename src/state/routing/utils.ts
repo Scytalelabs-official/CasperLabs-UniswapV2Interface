@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Ether, Token } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, Ether, Token } from '@casperswap/sdk-core'
 import { FeeAmount, Pool, Route } from '@uniswap/v3-sdk'
 
 import { GetQuoteResult } from './types'

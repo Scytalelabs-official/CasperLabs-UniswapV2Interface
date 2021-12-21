@@ -1,10 +1,10 @@
+import { Percent } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
-import { Percent, Price, Token } from '@uniswap/sdk-core'
 import { Position } from '@uniswap/v3-sdk'
 import Badge from 'components/Badge'
 import RangeBadge from 'components/Badge/RangeBadge'
 import DoubleCurrencyLogo from 'components/DoubleLogo'
-import HoverInlineText from 'components/HoverInlineText'
+// import HoverInlineText from 'components/HoverInlineText'
 import Loader from 'components/Loader'
 import { RowBetween } from 'components/Row'
 import { useToken } from 'hooks/Tokens'
@@ -12,11 +12,11 @@ import useIsTickAtLimit from 'hooks/useIsTickAtLimit'
 import { usePool } from 'hooks/usePools'
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { Bound } from 'state/mint/v3/actions'
+// import { Bound } from 'state/mint/v3/actions'
 import styled from 'styled-components/macro'
 import { HideSmall, MEDIA_WIDTHS, SmallOnly } from 'theme'
 import { PositionDetails } from 'types/position'
-import { formatTickPrice } from 'utils/formatTickPrice'
+// import { formatTickPrice } from 'utils/formatTickPrice'
 import { unwrappedToken } from 'utils/unwrappedToken'
 
 import { DAI, USDC, USDT, WBTC, WETH9_EXTENDED } from '../../constants/tokens'
@@ -131,59 +131,59 @@ interface PositionListItemProps {
   positionDetails: PositionDetails
 }
 
-export function getPriceOrderingFromPositionForUI(position?: Position): {
-  priceLower?: Price<Token, Token>
-  priceUpper?: Price<Token, Token>
-  quote?: Token
-  base?: Token
-} {
-  if (!position) {
-    return {}
-  }
+// export function getPriceOrderingFromPositionForUI(position?: Position): {
+//   priceLower?: Price<Token, Token>
+//   priceUpper?: Price<Token, Token>
+//   quote?: Token
+//   base?: Token
+// } {
+//   if (!position) {
+//     return {}
+//   }
 
-  const token0 = position.amount0.currency
-  const token1 = position.amount1.currency
+//   const token0 = position.amount0.currency
+//   const token1 = position.amount1.currency
 
-  // if token0 is a dollar-stable asset, set it as the quote token
-  const stables = [DAI, USDC, USDT]
-  if (stables.some((stable) => stable.equals(token0))) {
-    return {
-      priceLower: position.token0PriceUpper.invert(),
-      priceUpper: position.token0PriceLower.invert(),
-      quote: token0,
-      base: token1,
-    }
-  }
+//   // if token0 is a dollar-stable asset, set it as the quote token
+//   const stables = [DAI, USDC, USDT]
+//   if (stables.some((stable) => stable.equals(token0))) {
+//     return {
+//       priceLower: position.token0PriceUpper.invert(),
+//       priceUpper: position.token0PriceLower.invert(),
+//       quote: token0,
+//       base: token1,
+//     }
+//   }
 
-  // if token1 is an ETH-/BTC-stable asset, set it as the base token
-  const bases = [...Object.values(WETH9_EXTENDED), WBTC]
-  if (bases.some((base) => base.equals(token1))) {
-    return {
-      priceLower: position.token0PriceUpper.invert(),
-      priceUpper: position.token0PriceLower.invert(),
-      quote: token0,
-      base: token1,
-    }
-  }
+//   // if token1 is an ETH-/BTC-stable asset, set it as the base token
+//   const bases = [...Object.values(WETH9_EXTENDED), WBTC]
+//   if (bases.some((base) => base.equals(token1))) {
+//     return {
+//       priceLower: position.token0PriceUpper.invert(),
+//       priceUpper: position.token0PriceLower.invert(),
+//       quote: token0,
+//       base: token1,
+//     }
+//   }
 
-  // if both prices are below 1, invert
-  if (position.token0PriceUpper.lessThan(1)) {
-    return {
-      priceLower: position.token0PriceUpper.invert(),
-      priceUpper: position.token0PriceLower.invert(),
-      quote: token0,
-      base: token1,
-    }
-  }
+//   // if both prices are below 1, invert
+//   if (position.token0PriceUpper.lessThan(1)) {
+//     return {
+//       priceLower: position.token0PriceUpper.invert(),
+//       priceUpper: position.token0PriceLower.invert(),
+//       quote: token0,
+//       base: token1,
+//     }
+//   }
 
-  // otherwise, just return the default
-  return {
-    priceLower: position.token0PriceLower,
-    priceUpper: position.token0PriceUpper,
-    quote: token1,
-    base: token0,
-  }
-}
+//   // otherwise, just return the default
+//   return {
+//     priceLower: position.token0PriceLower,
+//     priceUpper: position.token0PriceUpper,
+//     quote: token1,
+//     base: token0,
+//   }
+// }
 
 export default function PositionListItem({ positionDetails }: PositionListItemProps) {
   const {
@@ -214,10 +214,10 @@ export default function PositionListItem({ positionDetails }: PositionListItemPr
   const tickAtLimit = useIsTickAtLimit(feeAmount, tickLower, tickUpper)
 
   // prices
-  const { priceLower, priceUpper, quote, base } = getPriceOrderingFromPositionForUI(position)
+  // const { priceLower, priceUpper, quote, base } = getPriceOrderingFromPositionForUI(position)
 
-  const currencyQuote = quote && unwrappedToken(quote)
-  const currencyBase = base && unwrappedToken(base)
+  // const currencyQuote = quote && unwrappedToken(quote)
+  // const currencyBase = base && unwrappedToken(base)
 
   // check if price is within range
   const outOfRange: boolean = pool ? pool.tickCurrent < tickLower || pool.tickCurrent >= tickUpper : false
@@ -230,10 +230,10 @@ export default function PositionListItem({ positionDetails }: PositionListItemPr
     <LinkRow to={positionSummaryLink}>
       <RowBetween>
         <PrimaryPositionIdData>
-          <DoubleCurrencyLogo currency0={currencyBase} currency1={currencyQuote} size={18} margin />
+          {/* <DoubleCurrencyLogo currency0={currencyBase} currency1={currencyQuote} size={18} margin />
           <DataText>
             &nbsp;{currencyQuote?.symbol}&nbsp;/&nbsp;{currencyBase?.symbol}
-          </DataText>
+          </DataText> */}
           &nbsp;
           <Badge>
             <BadgeText>
@@ -243,8 +243,8 @@ export default function PositionListItem({ positionDetails }: PositionListItemPr
         </PrimaryPositionIdData>
         <RangeBadge removed={removed} inRange={!outOfRange} />
       </RowBetween>
-
-      {priceLower && priceUpper ? (
+      <Loader />
+      {/* {priceLower && priceUpper ? (
         <RangeLineItem>
           <RangeText>
             <ExtentsText>
@@ -273,7 +273,7 @@ export default function PositionListItem({ positionDetails }: PositionListItemPr
         </RangeLineItem>
       ) : (
         <Loader />
-      )}
+      )} */}
     </LinkRow>
   )
 }

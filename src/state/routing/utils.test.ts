@@ -1,4 +1,4 @@
-import { Ether, Token } from '@uniswap/sdk-core'
+import { Ether, Token } from '@casperswap/sdk-core'
 
 import { computeRoutes } from './utils'
 

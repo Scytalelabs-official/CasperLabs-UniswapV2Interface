@@ -1,5 +1,5 @@
+import { Currency } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
-import { Currency } from '@uniswap/sdk-core'
 import { Position } from '@uniswap/v3-sdk'
 import RangeBadge from 'components/Badge/RangeBadge'
 import { LightCard } from 'components/Card'
@@ -51,8 +51,8 @@ export const PositionPreview = ({
 
   const price = sorted ? position.pool.priceOf(position.pool.token0) : position.pool.priceOf(position.pool.token1)
 
-  const priceLower = sorted ? position.token0PriceLower : position.token0PriceUpper.invert()
-  const priceUpper = sorted ? position.token0PriceUpper : position.token0PriceLower.invert()
+  // const priceLower = sorted ? position.token0PriceLower : position.token0PriceUpper.invert()
+  // const priceUpper = sorted ? position.token0PriceUpper : position.token0PriceLower.invert()
 
   const handleRateChange = useCallback(() => {
     setBaseCurrency(quoteCurrency)
@@ -125,11 +125,11 @@ export const PositionPreview = ({
               <TYPE.main fontSize="12px">
                 <Trans>Min Price</Trans>
               </TYPE.main>
-              <TYPE.mediumHeader textAlign="center">{`${formatTickPrice(
+              {/* <TYPE.mediumHeader textAlign="center">{`${formatTickPrice(
                 priceLower,
                 ticksAtLimit,
                 Bound.LOWER
-              )}`}</TYPE.mediumHeader>
+              )}`}</TYPE.mediumHeader> */}
               <TYPE.main textAlign="center" fontSize="12px">
                 <Trans>
                   {quoteCurrency.symbol} per {baseCurrency.symbol}
@@ -146,11 +146,11 @@ export const PositionPreview = ({
               <TYPE.main fontSize="12px">
                 <Trans>Max Price</Trans>
               </TYPE.main>
-              <TYPE.mediumHeader textAlign="center">{`${formatTickPrice(
+              {/* <TYPE.mediumHeader textAlign="center">{`${formatTickPrice(
                 priceUpper,
                 ticksAtLimit,
                 Bound.UPPER
-              )}`}</TYPE.mediumHeader>
+              )}`}</TYPE.mediumHeader> */}
               <TYPE.main textAlign="center" fontSize="12px">
                 <Trans>
                   {quoteCurrency.symbol} per {baseCurrency.symbol}

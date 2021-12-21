@@ -1,5 +1,5 @@
+import { Currency, CurrencyAmount, Token } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
-import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
 import { useCallback, useEffect, useState } from 'react'
 import { Plus } from 'react-feather'

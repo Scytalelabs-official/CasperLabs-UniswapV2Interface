@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@casperswap/sdk-core'
 import { SupportedChainId } from 'constants/chains'
 import Vibrant from 'node-vibrant/lib/bundle'
 import { shade } from 'polished'

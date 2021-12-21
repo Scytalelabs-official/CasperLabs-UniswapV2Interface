@@ -1,5 +1,5 @@
+import { CurrencyAmount, Token } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
-import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { useCallback, useEffect } from 'react'
 import { Heart, X } from 'react-feather'
 import ReactGA from 'react-ga'

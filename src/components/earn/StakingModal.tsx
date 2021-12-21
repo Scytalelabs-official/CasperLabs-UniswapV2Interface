@@ -1,6 +1,6 @@
+import { CurrencyAmount, Token } from '@casperswap/sdk-core'
 import { TransactionResponse } from '@ethersproject/providers'
 import { Trans } from '@lingui/macro'
-import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { Pair } from '@uniswap/v2-sdk'
 import { useCallback, useState } from 'react'
 import styled from 'styled-components/macro'

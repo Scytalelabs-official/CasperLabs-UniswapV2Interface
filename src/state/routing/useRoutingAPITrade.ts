@@ -1,5 +1,5 @@
+import { Currency, CurrencyAmount, TradeType } from '@casperswap/sdk-core'
 import { skipToken } from '@reduxjs/toolkit/query/react'
-import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
 import { Trade } from '@uniswap/v3-sdk'
 import ms from 'ms.macro'
 import { useMemo } from 'react'

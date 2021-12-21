@@ -1,4 +1,4 @@
-import { Currency, Token } from '@uniswap/sdk-core'
+import { Currency, Token } from '@casperswap/sdk-core'
 import { FeeAmount, Pool } from '@uniswap/v3-sdk'
 import { SupportedChainId } from 'constants/chains'
 import { useMemo } from 'react'

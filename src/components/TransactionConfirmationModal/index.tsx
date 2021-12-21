@@ -1,5 +1,5 @@
+import { Currency } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
-import { Currency } from '@uniswap/sdk-core'
 import Badge from 'components/Badge'
 import { CHAIN_INFO, L2_CHAIN_IDS, SupportedL2ChainId } from 'constants/chains'
 import useAddTokenToMetamask from 'hooks/useAddTokenToMetamask'
