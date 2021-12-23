@@ -103,7 +103,10 @@ const BAD_RECIPIENT_ADDRESSES: { [address: string]: true } = {
  * @param trade to check for the given address
  * @param checksummedAddress address to check in the pairs and tokens
  */
-function involvesAddress(trade: V2Trade<Currency, Currency, TradeType>, checksummedAddress: string): boolean {
+function involvesAddress(
+  trade: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType>,
+  checksummedAddress: string
+): boolean {
   const path = trade instanceof V2Trade ? trade.route.path : trade.route.tokenPath
   return (
     path.some((token) => token.address === checksummedAddress) ||
@@ -124,7 +127,7 @@ export function useDerivedSwapInfo(toggledVersion: Version | undefined): {
     trade: V3Trade<Currency, Currency, TradeType> | null
     state: V3TradeState
   }
-  bestTrade: V2Trade<Currency, Currency, TradeType> | undefined
+  bestTrade: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType> | undefined
   allowedSlippage: Percent
 } {
   // const { account } = useActiveWeb3React()

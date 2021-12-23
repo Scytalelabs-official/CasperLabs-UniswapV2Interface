@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro'
 import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
-// import { Trade as V3Trade } from '@uniswap/v3-sdk'
+import { Trade as V3Trade } from '@uniswap/v3-sdk'
 import { ReactNode, useCallback, useMemo } from 'react'
 
 import TransactionConfirmationModal, {
@@ -16,7 +16,9 @@ import SwapModalHeader from './SwapModalHeader'
  * @param args either a pair of V2 trades or a pair of V3 trades
  */
 function tradeMeaningfullyDiffers(
-  ...args: [V2Trade<Currency, Currency, TradeType>, V2Trade<Currency, Currency, TradeType>]
+  ...args:
+    | [V2Trade<Currency, Currency, TradeType>, V2Trade<Currency, Currency, TradeType>]
+    | [V3Trade<Currency, Currency, TradeType>, V3Trade<Currency, Currency, TradeType>]
 ): boolean {
   const [tradeA, tradeB] = args
   return (
@@ -42,8 +44,8 @@ export default function ConfirmSwapModal({
   txHash,
 }: {
   isOpen: boolean
-  trade: V2Trade<Currency, Currency, TradeType> | undefined
-  originalTrade: V2Trade<Currency, Currency, TradeType> | undefined
+  trade: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType> | undefined
+  originalTrade: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType> | undefined
   attemptingTxn: boolean
   txHash: string | undefined
   recipient: string | null
@@ -56,7 +58,12 @@ export default function ConfirmSwapModal({
   const showAcceptChanges = useMemo(
     () =>
       Boolean(
-        trade instanceof V2Trade && originalTrade instanceof V2Trade && tradeMeaningfullyDiffers(trade, originalTrade)
+        (trade instanceof V2Trade &&
+          originalTrade instanceof V2Trade &&
+          tradeMeaningfullyDiffers(trade, originalTrade)) ||
+          (trade instanceof V3Trade &&
+            originalTrade instanceof V3Trade &&
+            tradeMeaningfullyDiffers(trade, originalTrade))
       ),
     [originalTrade, trade]
   )

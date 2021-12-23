@@ -4,6 +4,7 @@ const CMC_ALL_LIST = 'https://api.coinmarketcap.com/data-api/v3/uniswap/all.json
 const COINGECKO_LIST = 'https://tokens.coingecko.com/uniswap/all.json'
 const COMPOUND_LIST = 'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json'
 const GEMINI_LIST = 'https://www.gemini.com/uniswap/manifest.json'
+const CASPER_LIST = 'https://casper-uniswap-v2-graphql.herokuapp.com/tokensList'
 export const ARBITRUM_LIST = 'https://bridge.arbitrum.io/token-list-42161.json'
 const KLEROS_LIST = 't2crtokens.eth'
 export const OPTIMISM_LIST = 'https://static.optimism.io/optimism.tokenlist.json'

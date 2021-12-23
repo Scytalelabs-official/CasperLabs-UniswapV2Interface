@@ -63,6 +63,7 @@ export default function CurrencyLogo({
 
   const srcs: string[] = useMemo(() => {
     if (!currency || currency.isNative) return []
+    console.log('currencyy', currency)
 
     if (currency.isToken) {
       const defaultUrls = []
