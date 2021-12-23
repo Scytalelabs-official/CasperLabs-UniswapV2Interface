@@ -85,7 +85,7 @@ const Layer2Prompt = styled(EmptyProposals)`
 export default function Pool() {
   const theme = useContext(ThemeContext)
   const { chainId } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
 
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()

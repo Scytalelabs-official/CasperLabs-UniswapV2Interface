@@ -1,4 +1,4 @@
-import { Currency } from '@casperswap/sdk-core'
+import { Currency } from '@uniswap/sdk-core'
 
 export function currencyId(currency: Currency): string {
   if (currency.isNative) return 'ETH'

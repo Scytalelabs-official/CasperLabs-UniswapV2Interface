@@ -1,4 +1,4 @@
-import { Token } from '@casperswap/sdk-core'
+import { Token } from '@uniswap/sdk-core'
 
 import { tryParsePrice } from './utils'
 

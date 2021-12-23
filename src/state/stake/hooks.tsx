@@ -1,7 +1,7 @@
-import { CurrencyAmount, Token } from '@casperswap/sdk-core'
 import { Interface } from '@ethersproject/abi'
 import { Trans } from '@lingui/macro'
 import { abi as STAKING_REWARDS_ABI } from '@uniswap/liquidity-staker/build/StakingRewards.json'
+import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { Pair } from '@uniswap/v2-sdk'
 import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
 import JSBI from 'jsbi'
@@ -75,7 +75,7 @@ export interface StakingInfo {
 // gets the staking info from the network for the active chain id
 export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
   const { chainId } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
 
   // detect if staking is ended
   const currentBlockTimestamp = useCurrentBlockTimestamp()
@@ -254,7 +254,7 @@ export function useDerivedStakeInfo(
   error?: ReactNode
 } {
   // const { account } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
 
   const parsedInput: CurrencyAmount<Token> | undefined = tryParseAmount(typedValue, stakingToken)
 

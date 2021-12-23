@@ -1,5 +1,5 @@
-import { Percent } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
+import { Percent } from '@uniswap/sdk-core'
 import { Position } from '@uniswap/v3-sdk'
 import Badge from 'components/Badge'
 import RangeBadge from 'components/Badge/RangeBadge'

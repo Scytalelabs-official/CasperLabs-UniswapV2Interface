@@ -1,5 +1,5 @@
-import { Currency, Percent, TradeType } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
+import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
 // import { Trade as V3Trade } from '@uniswap/v3-sdk'
 import { LoadingRows } from 'components/Loader/styled'

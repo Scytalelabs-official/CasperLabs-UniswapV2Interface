@@ -1,9 +1,9 @@
-import { Currency, Percent, TradeType } from '@casperswap/sdk-core'
 import { BigNumber } from '@ethersproject/bignumber'
 // eslint-disable-next-line no-restricted-imports
 import { t, Trans } from '@lingui/macro'
+import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
 import { Router, Trade as V2Trade } from '@uniswap/v2-sdk'
-import { SwapRouter, Trade as V3Trade } from '@uniswap/v3-sdk'
+import { SwapRouter } from '@uniswap/v3-sdk'
 import { ReactNode, useMemo } from 'react'
 
 import { SWAP_ROUTER_ADDRESSES } from '../constants/addresses'

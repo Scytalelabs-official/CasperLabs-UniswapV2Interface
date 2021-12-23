@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, Percent, Token } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
+import { Currency, CurrencyAmount, Percent, Token } from '@uniswap/sdk-core'
 import { Pair } from '@uniswap/v2-sdk'
 import { AutoColumn } from 'components/Column'
 import { LoadingOpacityContainer, loadingOpacityMixin } from 'components/Loader/styled'
@@ -199,7 +199,7 @@ export default function CurrencyInputPanel({
 }: CurrencyInputPanelProps) {
   const [modalOpen, setModalOpen] = useState(false)
   // const { account } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
   const selectedCurrencyBalance = useCurrencyBalance(
     account === null || account === 'null' ? undefined : undefined,
     currency ?? undefined

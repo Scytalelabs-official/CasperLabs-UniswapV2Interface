@@ -27,7 +27,7 @@ interface StakingModalProps {
 
 export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: StakingModalProps) {
   // const { account } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
   // monitor call to help UI loading state
   const addTransaction = useTransactionAdder()
   const [hash, setHash] = useState<string | undefined>()

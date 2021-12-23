@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@casperswap/sdk-core'
+import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { useMemo } from 'react'
 
 import { useAllTokenBalances } from '../../state/wallet/hooks'

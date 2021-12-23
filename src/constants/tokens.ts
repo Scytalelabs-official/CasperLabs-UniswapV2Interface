@@ -1,4 +1,4 @@
-import { Ether, Token, WETH9 } from '@casperswap/sdk-core'
+import { Ether, Token, WETH9 } from '@uniswap/sdk-core'
 
 import { UNI_ADDRESS } from './addresses'
 import { SupportedChainId } from './chains'

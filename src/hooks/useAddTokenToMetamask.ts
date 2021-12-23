@@ -1,4 +1,4 @@
-import { Currency, Token } from '@casperswap/sdk-core'
+import { Currency, Token } from '@uniswap/sdk-core'
 import { useActiveWeb3React } from 'hooks/web3'
 import { useCallback, useState } from 'react'
 

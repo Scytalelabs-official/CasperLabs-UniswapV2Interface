@@ -1,6 +1,6 @@
-import { Currency, CurrencyAmount, Percent, TradeType } from '@casperswap/sdk-core'
 import { parseUnits } from '@ethersproject/units'
 import { Trans } from '@lingui/macro'
+import { Currency, CurrencyAmount, Percent, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
 import { Trade as V3Trade } from '@uniswap/v3-sdk'
 import { TWO_PERCENT } from 'constants/misc'
@@ -103,10 +103,7 @@ const BAD_RECIPIENT_ADDRESSES: { [address: string]: true } = {
  * @param trade to check for the given address
  * @param checksummedAddress address to check in the pairs and tokens
  */
-function involvesAddress(
-  trade: V2Trade<Currency, Currency, TradeType>,
-  checksummedAddress: string
-): boolean {
+function involvesAddress(trade: V2Trade<Currency, Currency, TradeType>, checksummedAddress: string): boolean {
   const path = trade instanceof V2Trade ? trade.route.path : trade.route.tokenPath
   return (
     path.some((token) => token.address === checksummedAddress) ||
@@ -122,7 +119,7 @@ export function useDerivedSwapInfo(toggledVersion: Version | undefined): {
   currencyBalances: { [field in Field]?: CurrencyAmount<Currency> }
   parsedAmount: CurrencyAmount<Currency> | undefined
   inputError?: ReactNode
-  v2Trade: V2Trade<Currency, Currency, TradeType>| undefined
+  v2Trade: V2Trade<Currency, Currency, TradeType> | undefined
   v3Trade: {
     trade: V3Trade<Currency, Currency, TradeType> | null
     state: V3TradeState
@@ -131,7 +128,7 @@ export function useDerivedSwapInfo(toggledVersion: Version | undefined): {
   allowedSlippage: Percent
 } {
   // const { account } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
   const {
     independentField,
     typedValue,

@@ -1,4 +1,4 @@
-import { Currency, Percent } from '@casperswap/sdk-core'
+import { Currency, Percent } from '@uniswap/sdk-core'
 import { FeeAmount } from '@uniswap/v3-sdk'
 import Badge from 'components/Badge'
 import CurrencyLogo from 'components/CurrencyLogo'

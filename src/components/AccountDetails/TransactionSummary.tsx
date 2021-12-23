@@ -1,5 +1,5 @@
-import { Fraction, TradeType } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
+import { Fraction, TradeType } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
 
 import { useCurrency, useToken } from '../../hooks/Tokens'

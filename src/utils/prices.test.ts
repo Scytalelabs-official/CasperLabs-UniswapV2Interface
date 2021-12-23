@@ -1,4 +1,4 @@
-import { CurrencyAmount, Percent, Token, TradeType } from '@casperswap/sdk-core'
+import { CurrencyAmount, Percent, Token, TradeType } from '@uniswap/sdk-core'
 import { Pair, Route, Trade } from '@uniswap/v2-sdk'
 import JSBI from 'jsbi'
 

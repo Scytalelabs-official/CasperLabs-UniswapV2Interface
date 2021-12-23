@@ -240,7 +240,7 @@ export default function AccountDetails({
   openOptions,
 }: AccountDetailsProps) {
   const { chainId, connector } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
   console.log('ENSName', ENSName)
   const theme = useContext(ThemeContext)
   const dispatch = useAppDispatch()
@@ -285,7 +285,7 @@ export default function AccountDetails({
                       style={{ fontSize: '.825rem', fontWeight: 400, marginRight: '8px' }}
                       onClick={() => {
                         Signer.disconnectFromSite()
-                        localStorage.removeItem('account')
+                        sessionStorage.removeItem('account')
                       }}
                     >
                       <Trans>Disconnect</Trans>

@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, Percent } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
+import { Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
 import { Position } from '@uniswap/v3-sdk'
 import { useToken } from 'hooks/Tokens'
 import { usePool } from 'hooks/usePools'
@@ -31,7 +31,7 @@ export function useDerivedV3BurnInfo(
   error?: ReactNode
 } {
   // const { account } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
   const { percent } = useBurnV3State()
 
   const token0 = useToken(position?.token0)

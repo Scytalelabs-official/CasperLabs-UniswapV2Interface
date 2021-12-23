@@ -1,6 +1,6 @@
-import { CurrencyAmount, Token } from '@casperswap/sdk-core'
 import { isAddress } from '@ethersproject/address'
 import { Trans } from '@lingui/macro'
+import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
 import { useEffect, useState } from 'react'
 import { Text } from 'rebass'

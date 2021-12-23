@@ -1,6 +1,6 @@
-import { Percent } from '@casperswap/sdk-core'
 // eslint-disable-next-line no-restricted-imports
 import { t, Trans } from '@lingui/macro'
+import { Percent } from '@uniswap/sdk-core'
 import { SupportedChainId } from 'constants/chains'
 import { useActiveWeb3React } from 'hooks/web3'
 import { useContext, useRef, useState } from 'react'

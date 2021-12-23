@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, Percent, Token } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
+import { Currency, CurrencyAmount, Percent, Token } from '@uniswap/sdk-core'
 import { Pair } from '@uniswap/v2-sdk'
 import JSBI from 'jsbi'
 import { ReactNode, useCallback } from 'react'
@@ -31,7 +31,7 @@ export function useDerivedBurnInfo(
   error?: ReactNode
 } {
   // const { account } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
 
   const { independentField, typedValue } = useBurnState()
 

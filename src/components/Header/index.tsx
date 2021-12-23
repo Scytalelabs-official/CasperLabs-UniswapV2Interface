@@ -258,7 +258,7 @@ const UniToken = styled.img`
 
 export default function Header() {
   const { chainId } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
   const [darkMode] = useDarkModeManager()

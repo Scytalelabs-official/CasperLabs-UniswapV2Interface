@@ -1,5 +1,5 @@
-import { CurrencyAmount, Token } from '@casperswap/sdk-core'
 import { TransactionResponse } from '@ethersproject/providers'
+import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
 import { useEffect, useState } from 'react'
 

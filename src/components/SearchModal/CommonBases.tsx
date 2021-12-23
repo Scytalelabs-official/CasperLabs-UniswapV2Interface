@@ -1,5 +1,5 @@
-import { Currency } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
+import { Currency } from '@uniswap/sdk-core'
 import { AutoColumn } from 'components/Column'
 import CurrencyLogo from 'components/CurrencyLogo'
 import QuestionHelper from 'components/QuestionHelper'

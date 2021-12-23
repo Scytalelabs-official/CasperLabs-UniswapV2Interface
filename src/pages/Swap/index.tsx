@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, Token, TradeType } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
+import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
 import { Trade as V3Trade } from '@uniswap/v3-sdk'
 import { LoadingOpacityContainer } from 'components/Loader/styled'
@@ -78,7 +78,7 @@ const StyledInfo = styled(Info)`
 
 export default function Swap({ history }: RouteComponentProps) {
   // const { account } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
   const loadedUrlParams = useDefaultsFromURLSearch()
 
   // token warning stuff

@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Percent, TradeType } from '@casperswap/sdk-core'
+import { Currency, CurrencyAmount, Percent, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
 import { Trade as V3Trade } from '@uniswap/v3-sdk'
 import { L2_CHAIN_IDS } from 'constants/chains'
@@ -19,9 +19,7 @@ const ONE_TENTHS_PERCENT = new Percent(10, 10_000) // .10%
  * Return a guess of the gas cost used in computing slippage tolerance for a given trade
  * @param trade the trade for which to _guess_ the amount of gas it would cost to execute
  */
-function guesstimateGas(
-  trade: V2Trade<Currency, Currency, TradeType> | undefined
-): number | undefined {
+function guesstimateGas(trade: V2Trade<Currency, Currency, TradeType> | undefined): number | undefined {
   if (trade instanceof V2Trade) {
     return 90_000 + trade.route.pairs.length * 30_000
   } else if (trade instanceof V3Trade) {
@@ -33,9 +31,7 @@ function guesstimateGas(
 const MIN_AUTO_SLIPPAGE_TOLERANCE = new Percent(5, 1000) // 0.5%
 const MAX_AUTO_SLIPPAGE_TOLERANCE = new Percent(25, 100) // 25%
 
-export default function useSwapSlippageTolerance(
-  trade: V2Trade<Currency, Currency, TradeType> | undefined
-): Percent {
+export default function useSwapSlippageTolerance(trade: V2Trade<Currency, Currency, TradeType> | undefined): Percent {
   const { chainId } = useActiveWeb3React()
   const onL2 = chainId && L2_CHAIN_IDS.includes(chainId)
   const outputDollarValue = useUSDCValue(trade?.outputAmount)

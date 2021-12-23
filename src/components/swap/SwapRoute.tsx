@@ -1,7 +1,7 @@
-import { Currency, Percent, TradeType } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
+import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
-import { FeeAmount } from '@uniswap/v3-sdk'
+import { FeeAmount, Trade as V3Trade } from '@uniswap/v3-sdk'
 import Badge from 'components/Badge'
 import { AutoColumn } from 'components/Column'
 import { LoadingRows } from 'components/Loader/styled'
@@ -28,7 +28,7 @@ export default memo(function SwapRoute({
   trade,
   syncing,
 }: {
-  trade: V2Trade<Currency, Currency, TradeType>
+  trade: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType>
   syncing: boolean
 }) {
   const routingAPIEnabled = useRoutingAPIEnabled()
@@ -74,7 +74,7 @@ export default memo(function SwapRoute({
 })
 
 function getTokenPath(
-  trade: V2Trade<Currency, Currency, TradeType>
+  trade: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType>
 ): RoutingDiagramEntry[] {
   // convert V2 path to a list of routes
   if (trade instanceof V2Trade) {

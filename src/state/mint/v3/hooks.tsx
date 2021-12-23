@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, Price, Rounding, Token } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
+import { Currency, CurrencyAmount, Price, Rounding, Token } from '@uniswap/sdk-core'
 import {
   encodeSqrtRatioX96,
   FeeAmount,
@@ -122,7 +122,7 @@ export function useV3DerivedMintInfo(
   ticksAtLimit: { [bound in Bound]?: boolean | undefined }
 } {
   // const { account } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
 
   const { independentField, typedValue, leftRangeTypedValue, rightRangeTypedValue, startPriceTypedValue } =
     useV3MintState()

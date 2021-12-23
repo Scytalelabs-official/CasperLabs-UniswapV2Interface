@@ -1,7 +1,7 @@
-import { Percent } from '@casperswap/sdk-core'
 import { BigNumber } from '@ethersproject/bignumber'
 // import { TransactionResponse } from '@ethersproject/providers'
 import { Trans } from '@lingui/macro'
+import { Percent } from '@uniswap/sdk-core'
 // import { NonfungiblePositionManager } from '@uniswap/v3-sdk'
 import RangeBadge from 'components/Badge/RangeBadge'
 import { ButtonConfirmed, ButtonPrimary } from 'components/Button'
@@ -66,7 +66,7 @@ function Remove({ tokenId }: { tokenId: BigNumber }) {
   const { position } = useV3PositionFromTokenId(tokenId)
   const theme = useTheme()
   const { chainId, library } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
 
   // flag for receiving WETH
   const [receiveWETH, setReceiveWETH] = useState(false)

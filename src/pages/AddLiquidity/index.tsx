@@ -1,7 +1,7 @@
-import { Currency, CurrencyAmount, Percent } from '@casperswap/sdk-core'
 import { BigNumber } from '@ethersproject/bignumber'
 // import { TransactionResponse } from '@ethersproject/providers'
 import { Trans } from '@lingui/macro'
+import { Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
 import { FeeAmount } from '@uniswap/v3-sdk'
 import DowntimeWarning from 'components/DowntimeWarning'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
@@ -26,7 +26,7 @@ import FeeSelector from '../../components/FeeSelector'
 import HoverInlineText from '../../components/HoverInlineText'
 import LiquidityChartRangeInput from '../../components/LiquidityChartRangeInput'
 import { AddRemoveTabs } from '../../components/NavigationTabs'
-// import { PositionPreview } from '../../components/PositionPreview'
+// import { @uniswap/ } from '../../components/@uniswap/'
 import RangeSelector from '../../components/RangeSelector'
 import PresetsButtons from '../../components/RangeSelector/PresetsButtons'
 import RateToggle from '../../components/RateToggle'
@@ -82,7 +82,7 @@ export default function AddLiquidity({
   history,
 }: RouteComponentProps<{ currencyIdA?: string; currencyIdB?: string; feeAmount?: string; tokenId?: string }>) {
   const { chainId, library } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
   const theme = useContext(ThemeContext)
   const toggleWalletModal = useWalletModalToggle() // toggle wallet when disconnected
   const expertMode = useIsExpertMode()
@@ -596,7 +596,7 @@ export default function AddLiquidity({
                   </>
                 )}
                 {/* {hasExistingPosition && existingPosition && (
-                  <PositionPreview
+                  <@uniswap/
                     position={existingPosition}
                     title={<Trans>Selected Range</Trans>}
                     inRange={!outOfRange}

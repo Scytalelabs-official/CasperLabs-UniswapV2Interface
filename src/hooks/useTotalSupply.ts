@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, Token } from '@casperswap/sdk-core'
 import { BigNumber } from '@ethersproject/bignumber'
+import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
 
 import { useSingleCallResult } from '../state/multicall/hooks'
 import { useTokenContract } from './useContract'

@@ -1,4 +1,4 @@
-import { Token } from '@casperswap/sdk-core'
+import { Token } from '@uniswap/sdk-core'
 import { ImportToken } from 'components/SearchModal/ImportToken'
 
 import Modal from '../Modal'

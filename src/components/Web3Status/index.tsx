@@ -137,7 +137,7 @@ function WrappedStatusIcon({ connector }: { connector: AbstractConnector }) {
 
 function Web3StatusInner() {
   const { connector, error } = useWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
 
   const { ENSName } = useENSName(account ?? undefined)
 
@@ -194,11 +194,11 @@ function Web3StatusInner() {
 
 export default function Web3Status() {
   const { active } = useWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
   console.log('active', active)
   console.log('account', account)
-  console.log('localStorage.getItem(active)', localStorage.getItem('active'))
-  console.log('localStorage.getItem(account)', account == 'null')
+  console.log('sessionStorage.getItem(active)', sessionStorage.getItem('active'))
+  console.log('sessionStorage.getItem(account)', account == 'null')
   const contextNetwork = useWeb3React(NetworkContextName)
 
   const { ENSName } = useENSName(account ?? undefined)

@@ -1,7 +1,7 @@
-import { Currency, CurrencyAmount, Percent } from '@casperswap/sdk-core'
 // import { BigNumber } from '@ethersproject/bignumber'
 // import { TransactionResponse } from '@ethersproject/providers'
 import { Trans } from '@lingui/macro'
+import { Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
 import { SwitchLocaleLink } from 'components/SwitchLocaleLink'
 import { useCallback, useContext, useState } from 'react'
@@ -54,7 +54,7 @@ export default function AddLiquidity({
   history,
 }: RouteComponentProps<{ currencyIdA?: string; currencyIdB?: string }>) {
   const { chainId, library } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
   const theme = useContext(ThemeContext)
   console.log('currencyIdA', currencyIdA)
   console.log('currencyIdB', currencyIdB)

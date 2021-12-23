@@ -1,4 +1,4 @@
-import { Currency } from '@casperswap/sdk-core'
+import { Currency } from '@uniswap/sdk-core'
 import { SupportedChainId } from 'constants/chains'
 import React, { useMemo } from 'react'
 import styled from 'styled-components/macro'

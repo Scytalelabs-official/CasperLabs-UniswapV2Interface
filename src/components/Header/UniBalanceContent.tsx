@@ -1,5 +1,5 @@
-import { CurrencyAmount, Token } from '@casperswap/sdk-core'
 import { Trans } from '@lingui/macro'
+import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { CHAIN_INFO, SupportedChainId } from 'constants/chains'
 import { useMemo } from 'react'
 import { X } from 'react-feather'
@@ -45,7 +45,7 @@ const StyledClose = styled(X)`
  */
 export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowUniBalanceModal: any }) {
   const { chainId } = useActiveWeb3React()
-  const account = localStorage.getItem('account')
+  const account = sessionStorage.getItem('account')
   const uni = chainId ? UNI[chainId] : undefined
 
   const total = useAggregateUniBalance()

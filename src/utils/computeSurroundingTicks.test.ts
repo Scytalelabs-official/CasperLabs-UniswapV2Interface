@@ -1,4 +1,4 @@
-import { Token } from '@casperswap/sdk-core'
+import { Token } from '@uniswap/sdk-core'
 import { FeeAmount, TICK_SPACINGS } from '@uniswap/v3-sdk'
 import JSBI from 'jsbi'
 import { AllV3TicksQuery } from 'state/data/generated'

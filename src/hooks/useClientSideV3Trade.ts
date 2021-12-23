@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, TradeType } from '@casperswap/sdk-core'
+import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
 import { Route, SwapQuoter, Trade } from '@uniswap/v3-sdk'
 import { SupportedChainId } from 'constants/chains'
 import JSBI from 'jsbi'
