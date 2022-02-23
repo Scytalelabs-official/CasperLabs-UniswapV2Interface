@@ -2,12 +2,12 @@ import { SnackbarProvider } from 'notistack';
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import AddLiquidity from "../Pages/Users/AddLiquidity";
-import HomeScreen from "../Pages/Users/HomeScreen";
 import Pairs from "../Pages/Users/Pairs";
 import Pool from "../Pages/Users/Pool";
 import RemoveLiquidity from "../Pages/Users/RemoveLiquidity";
 import Swap from "../Pages/Users/Swap";
 import Tokens from "../Pages/Users/Tokens";
+import { HomePage } from "../Pages/redesign/Home"
 
 function App() {
 
@@ -25,7 +25,7 @@ function App() {
     } else if (path === "/pairs") {
       return <Route component={Pairs} />;
     } else {
-      return <Route component={HomeScreen} />;
+      return <Route component={HomePage} />;
     }
   };
 
