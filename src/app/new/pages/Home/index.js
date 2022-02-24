@@ -1,34 +1,31 @@
 import React from "react";
 
-import mainLogo from '../../../../assets/img/mainLogo.png'
-
 // CSS-In-JSS
-import { Container, NavBarArea, NavBarContainer, NavBarBrand, NavBarConnect,MainArea, FooterArea, FooterContainer, FooterBox } from './styles'
+import { Container, NavBarArea, NavBarContainer, NavBarConnect, MainArea, FooterArea, FooterContainer, FooterBox } from './styles'
+
+import { molecules } from '../../molecules'
+const { Brand } = molecules
 
 
-export function HomePage() {
+export function Home() {
 
     return (
         <Container>
             <NavBarArea>
                 <NavBarContainer>
-                    <NavBarBrand>
-                        {/* eslint-disable-next-line jsx-a11y/alt-text*/}
-                        <img src="https://via.placeholder.com/50" />
-                        <h1>Casper Swap</h1>
-                    </NavBarBrand>
+                    <Brand title="Casper Swap" url="https://via.placeholder.com/50" />
                     <NavBarConnect>
                         Connect
                     </NavBarConnect>
                 </NavBarContainer>
             </NavBarArea>
             <MainArea>
-                <img src={mainLogo} />
+                <img src="https://via.placeholder.com/300" />
             </MainArea>
             <FooterArea>
                 <FooterContainer>
                     {["Swap", "Liquidity", "Pools", "Tokens"].map(box => {
-                        return (<FooterBox>{box}</FooterBox>)
+                        return (<FooterBox key={box}>{box}</FooterBox>)
                     })}
                 </FooterContainer>
             </FooterArea>

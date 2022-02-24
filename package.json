@@ -16,7 +16,6 @@
     "@mui/material": "^5.3.0",
     "@syncfusion/ej2-react-inputs": "^19.1.54",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "casper-js-sdk": "^2.7.5",
@@ -62,7 +61,7 @@
     "start": "react-scripts start",
     "reactStart": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -79,5 +78,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^9.5.0"
   }
 }

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.section`
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(rgba(42,58,217,1) 50%,rgba(51,84,251,1) 100%);
     display: grid;
     grid-template: auto 1fr auto / 1fr;
