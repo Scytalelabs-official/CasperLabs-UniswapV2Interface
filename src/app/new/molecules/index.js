@@ -1,3 +1,2 @@
-import { Brand } from './Brand'
-
-export const molecules = { Brand }
+export { Brand } from './Brand'
+export { ActionsBar } from './ActionsBar'

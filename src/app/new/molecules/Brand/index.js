@@ -1,9 +1,6 @@
 import React from 'react'
-import { atoms } from '../../atoms'
+import { Title, ImgRender } from '../../atoms'
 import { BrandStyles } from './styles'
-
-const { Title, ImgRender } = atoms
-
 
 export const Brand = ({ title, url }) => {
     return (
